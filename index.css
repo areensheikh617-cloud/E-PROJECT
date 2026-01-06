@@ -15,19 +15,18 @@
      color: #333;
      /* background-color: #f4f4f4; */
      background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
  }
- 
+
 
 
  /* Header Styles */
  .hero-section {
      /* Background Image setup */
-     background:linear-gradient( to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3))
-     ,url('./CONTENT/Gemini_Generated_Image_ijqidijqidijqidi\ \(1\).png');
+     background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('./CONTENT/Gemini_Generated_Image_ijqidijqidijqidi\ \(1\).png');
      background-size: cover;
      background-position: center;
      height: 750px;
@@ -68,12 +67,45 @@
      color: white;
  }
 
+ .bt {
+     padding: 10px 25px;
+     font-size: 16px;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: 0.3s;
+     font-weight: bold;
+ }
+
+ /* Login Button (Outline Style) */
+ .btn-login {
+     background-color: transparent;
+     border: 2px solid #007BFF;
+ }
+
+ .btn-login:hover {
+     background-color: #e7f1ff;
+     color: black;
+ }
+
+ /* Sign Up Button (Solid Color Style) */
+ .btn-signup {
+     background-color: #007BFF;
+     border: 2px solid #007BFF;
+     color: white;
+ }
+
+ .btn-signup:hover {
+     background-color: #0056b3;
+     border-color: #0056b3;
+ }
+
  /* Active Link (Golden Underline) */
  .nav-links a.active {
      color: white;
      border-bottom: 3px solid #c5a065;
  }
-  .hero {
+
+ .hero {
      padding: 0 5%;
      margin-top: 150px;
      margin-left: 80px;
@@ -120,7 +152,7 @@
      color: white;
  }
 
- 
+
 
  /* Main Container */
  .container {
@@ -209,7 +241,7 @@
      font-size: 1.05rem;
  }
 
- .read-more-btn {
+ .read-more-bt {
      display: inline-block;
      background: #1e3c72;
      color: white;
@@ -220,7 +252,7 @@
      align-self: flex-start;
  }
 
- .read-more-btn:hover {
+ .read-more-bt:hover {
      background: #667eea;
  }
 
@@ -704,8 +736,3 @@
          font-size: 1.5rem;
      }
  }
-
-
-
-
-

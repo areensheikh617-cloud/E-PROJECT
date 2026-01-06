@@ -1,119 +1,119 @@
- * {
-     box-sizing: border-box;
-     margin: 0;
-     padding: 0;
- }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- body {
-     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-     background-color: #f4f6f9;
-     /* Light Grey Background */
-     color: #333333;
-     /* Dark Grey Text */
-     line-height: 1.8;
-           background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+      background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+/* Header Styles */
+.hero-section {
+    /* Background Image setup */
+    background:linear-gradient( to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
+    url('./CONTENT/climate-summit.png');
+    background-size: cover;
+    background-position: center;
+    height: 750px;
+    position: relative;
+    border-radius: 0 0 20px 20px;
+
+}
+
+.navbar {
+    width: 100%;
+    padding: 40px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0 0 30px 30px;
+    border-bottom: 1px solid red;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+/* Active Link (Golden Underline) */
+.nav-links a.active {
+    color: white;
+    border-bottom: 3px solid #c5a065;
+}
+
+  .hero {
+     padding: 0 5%;
+     margin-top: 150px;
+     margin-left: 80px;
  }
 
- /* Header Styles */
- .hero-section {
-     /* Background Image setup */
-     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./CONTENT/climate-summit.png');
-     background-size: cover;
-     background-position: center;
-     height: 500px;
-     position: relative;
-     border-radius: 0 0 20px 20px;
+ /* The Pro Gradient Overlay */
 
+ .hero-content {
+     max-width: 650px;
+     color: white;
  }
 
- .navbar {
-     width: 100%;
-     padding: 25px 0;
-     padding: 50px;
-     background-color: rgba(0, 0, 0, 0.6);
-     border-radius: 0 0 30px 30px;
-     border-bottom: 1px solid rgba(0, 0, 0, 0.0);
- }
-
- .nav-links {
-     list-style: none;
-     display: flex;
-     justify-content: center;
-     flex-wrap: wrap;
-     gap: 30px;
-
- }
-
- .nav-links a {
-     text-decoration: none;
-     color: #e0e0e0;
-     font-size: 20px;
-     font-weight: 700;
+ .hero h1 {
+     font-family: 'Oswald', sans-serif;
+     font-size: 5.3rem;
+     line-height: 1.1;
+     margin-bottom: 20px;
      text-transform: uppercase;
-     letter-spacing: 1px;
-     position: relative;
-     padding-bottom: 10px;
+     color: rgb(213, 213, 213);
+ }
+
+ .hero p {
+     font-size: 1.2rem;
+     margin-bottom: 30px;
+     border-left: 4px solid #cc0000;
+     /* Stylish accent line */
+     padding-left: 15px;
+     background: rgba(0, 0, 0, 0.3);
+     /* Subtle background */
+ }
+
+ .btn {
+     padding: 15px 40px;
+     background-color: white;
+     color: black;
+     text-decoration: none;
+     font-weight: bold;
+     text-transform: uppercase;
      transition: 0.3s;
  }
 
- .nav-links a:hover {
+ .btn:hover {
+     background-color: #cc0000;
      color: white;
  }
-
- /* Active Link (Golden Underline) */
- .nav-links a.active {
-     color: white;
-     border-bottom: 3px solid #c5a065;
- }
-
- /* Hero Content (Center Text) */
- .hero-content {
-     text-align: center;
-     color: white;
-     margin-top: 80px;
-     margin-bottom: auto;
-     padding: 0 20px;
-
- }
-
-.hero-content h1 {
-  font-size: 50px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    color: #f0f0f0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 900;
-    letter-spacing: 1px;
-    margin-left: 600px;
-    border-color: maroon;
-    border-radius: 20px;
-    border-style: solid;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 600px;
-    padding: 10px;
-    text-transform: uppercase;
-}
-
-
-.hero-content p {
-     font-size: 23px;
-    text-transform: capitalize;
-     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 0 auto;
-    margin-left: 520px;
-    color: #f0f0f0;
-    border-color: maroon;
-    border-radius: 20px;
-    border-style: solid;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    width: 750px;
-}
 
  /* --- LAYOUT --- */
  .container {

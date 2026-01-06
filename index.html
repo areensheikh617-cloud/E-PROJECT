@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="./index.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-
+     
     <header class="hero-section">
         <nav class="navbar">
             <ul class="nav-links">
@@ -24,8 +24,10 @@
                 <li><a href="./cities.html" target="_blank">CITIES</a></li>
                 <li><a href="./contact-page.html" target="_blank">CONTACT US</a></li>
                 <li><a href="./feedback-page.html" target="_blank">FEEDBACK</a></li>
-                <li><a href="./login.html" target="_blank">LOGIN</a></li>
-                <li><a href="./signup.html" target="_blank">SIGN UP</a></li>
+
+                <li><a href="./login.html" target="_blank" class="bt btn-login">LOGIN</a></li>
+                <li><a href="./signup.html" target="_blank" class="bt btn-signup">SIGN UP</a></li>
+
             </ul>
         </nav>
 
@@ -70,9 +72,9 @@
 
             <!-- Latest Headlines -->
             <h2 class="section-title">📰 Latest Headlines</h2>
-            <div class="news-flex">
+            <div class="news-flex" >
                 <!-- Card 1 -->
-                <div class="news-card">
+                <div class="news-card" >
                     <div class="news-image">
                         <img src="./CONTENT/climate-summit.png" alt="">
                     </div>
@@ -387,12 +389,12 @@
         <script>
             $(document).ready(function () {
                 $(".read-more").click(function () {
-                    $(".news-content").show
+                    $(".news-content").append()
                 })
             })
 
             $(".read-more").click(function () {
-                $(".news-content").hide
+                $(".news-content").hide()
             })
 
         </script>
@@ -401,9 +403,9 @@
 
 
 
-
-</body>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
 
 
 </html>
