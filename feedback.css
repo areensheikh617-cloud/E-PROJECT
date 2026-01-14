@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -10,23 +9,24 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-      background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
+    background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-/* Header Styles */
+/* =========================================
+   HEADER & HERO SECTION
+   ========================================= */
 .hero-section {
-    background:linear-gradient( to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
     url('./CONTENT/feedback-dnbc.jpg');
     background-size: cover;
     background-position: center;
     height: 750px;
     position: relative;
     border-radius: 0 0 20px 20px;
-
 }
 
 .navbar {
@@ -43,7 +43,6 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-
 }
 
 .nav-links a {
@@ -61,91 +60,93 @@ body {
 .nav-links a:hover {
     color: white;
 }
-.bt {
-     padding: 10px 30px ;
-     font-size: 16px;
-     border-radius: 5px;
-     cursor: pointer;
-     transition: 0.3s;
-     font-weight: bold;
- }
 
-
- .btn-login {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-login:hover {
-     background-color: grey;
- }
-
-
- .btn-signup {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-signup:hover {
-     background-color:gray;
- }
-
-/* Active Link (Golden Underline) */
 .nav-links a.active {
     color: white;
     border-bottom: 3px solid #c5a065;
 }
 
-  .hero {
-     padding: 0 5%;
-     margin-top: 150px;
-     margin-left: 80px;
- }
+/* Buttons */
+.bt {
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    color: white;
+    border: none;
+}
 
- /* The Pro Gradient Overlay */
+.btn-login {
+    background-color: maroon;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+}
 
- .hero-content {
-     max-width: 800px;
-     color: white;
- }
+.btn-login:hover {
+    background-color: grey;
+}
 
- .hero h1 {
-     font-family: 'Oswald', sans-serif;
-     font-size: 5.3rem;
-     line-height: 1.1;
-     margin-bottom: 20px;
-     text-transform: uppercase;
-     color: rgb(213, 213, 213);
- }
+.btn-signup {
+    background-color: maroon;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+}
 
- .hero p {
-     font-size: 1.2rem;
-     margin-bottom: 30px;
-     border-left: 4px solid #cc0000;
-     /* Stylish accent line */
-     padding-left: 15px;
-     padding: 10px;
-     background: rgba(0, 0, 0, 0.3);
-     /* Subtle background */
- }
+.btn-signup:hover {
+    background-color: gray;
+}
 
- .btn {
-     padding: 15px 40px;
-     background-color: white;
-     color: black;
-     text-decoration: none;
-     font-weight: bold;
-     text-transform: uppercase;
-     transition: 0.3s;
- }
+/* Hero Content */
+.hero {
+    padding: 0 5%;
+    margin-top: 150px;
+    margin-left: 80px;
+}
 
- .btn:hover {
-     background-color: #cc0000;
-     color: white;
- }
+.hero-content {
+    max-width: 800px;
+    color: white;
+}
 
+.hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5.3rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: rgb(213, 213, 213);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    border-left: 4px solid #cc0000;
+    padding-left: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+    padding: 15px 40px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+/* =========================================
+   FEEDBACK PAGE CONTENT
+   ========================================= */
 .container {
     max-width: 900px;
     margin: 2rem auto;
@@ -153,7 +154,7 @@ body {
 }
 
 .page-header {
-    background: linear-gradient(90deg,#2e647c , #315865 , #0f2027);
+    background: linear-gradient(90deg, #2e647c, #315865, #0f2027);
     color: white;
     padding: 4rem 2rem;
     text-align: center;
@@ -162,16 +163,18 @@ body {
 }
 
 .page-header h1 {
-   font-size: 3rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 800;
 }
-.page-header p{
-     font-size: 1.2rem;
+
+.page-header p {
+    font-size: 1.2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* Feedback Form Styling */
 .feedback-form {
     background: white;
     padding: 3rem;
@@ -214,67 +217,77 @@ body {
     transition: border-color 0.3s;
 }
 
-/* .form-group input:focus,
+.form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
     border-color: #667eea;
-} */
+}
 
 .form-group textarea {
-
+    resize: vertical;
     min-height: 150px;
 }
 
+/* Rating Group Fix */
 .rating-group {
     display: flex;
-    gap: 1rem;
+    gap: 15px; /* Margin-left hata kar Gap use kiya */
     margin-top: 0.5rem;
+    flex-wrap: wrap; /* Mobile par wrap karega */
 }
 
 .rating-option {
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-/* 
-.rating-option input[type="radio"] {
-    display: none;
-} */
 
 .rating-label {
-    padding: 0.8rem;
+    padding: 0.8rem 1.2rem;
     text-align: center;
     border: 2px solid #e0e0e0;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
+    background: #fff;
+    font-weight: bold;
 }
 
-.rating-option :checked+.rating-label {
+.rating-option input[type="radio"]:checked + .rating-label {
     background: #667eea;
     color: white;
     border-color: #667eea;
 }
 
+/* Checkbox Group Fix */
 .checkbox-group {
     display: grid;
-    grid-template-rows: 40px 40px;
-    grid-template-columns: 120px 120px ;
-    gap: 20px;
+    /* Fixed grid ki jagah flexible grid lagaya */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
     margin-top: 0.5rem;
 }
 
 .checkbox-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
+    font-size: 1rem;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .checkbox-item input[type="checkbox"] {
-    width: auto;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
 }
 
+/* Submit Button */
 .submit-btn {
-      background: #2e647c ;
+    background: #2e647c;
     color: white;
     padding: 1rem 3rem;
     border: none;
@@ -283,13 +296,15 @@ body {
     font-weight: 600;
     cursor: pointer;
     width: 100%;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
 .submit-btn:hover {
-     background: #667eea;
-
+    background: #667eea;
 }
 
+/* Info Box */
 .info-box {
     background: #f0f7ff;
     border-left: 4px solid #667eea;
@@ -308,7 +323,9 @@ body {
     margin: 0;
 }
 
-/* Footer */
+/* =========================================
+   FOOTER
+   ========================================= */
 footer {
     background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
     color: white;
@@ -332,6 +349,7 @@ footer {
 
 .footer-section {
     margin-right: 80px;
+    flex: 1; /* Equal width */
 }
 
 .footer-section h3 {
@@ -366,7 +384,29 @@ footer {
     opacity: 0.8;
 }
 
-@media (max-width: 768px) {
+/* =======================================================
+   RESPONSIVE DESIGN (OPTIMIZED)
+   ======================================================= */
+
+/* --- Tablet View (Max Width: 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 95%;
+        margin: 2rem auto;
+    }
+
+    .feedback-form {
+        padding: 2rem;
+    }
+
+    .footer-section {
+        margin-right: 0;
+    }
+}
+
+/* --- Mobile View (Max Width: 768px) --- */
+@media screen and (max-width: 768px) {
+    
     .container {
         width: 100%;
         padding: 0 15px;
@@ -429,54 +469,32 @@ footer {
         padding: 15px !important;
         border-radius: 10px;
     }
+
     /* 3. FEEDBACK FORM FIXES */
     .feedback-form {
-        padding: 1.5rem; /* Mobile par padding aur kam */
+        padding: 1.5rem;
         width: 100%;
     }
 
     .rating-group {
-        flex-wrap: wrap; /* Agar rating options zyada ho to niche aa jayein */
-        justify-content: center; /* Center align */
+        justify-content: center; /* Center align stars */
         gap: 10px;
     }
 
-    .rating-option {
-        margin-left: 0; /* Left margin hataya */
-    }
-
+    /* Checkbox single column mein */
     .checkbox-group {
-        grid-template-columns: 1fr; /* Checkbox ek ke niche ek */
-        grid-template-rows: auto;
-        gap: 15px;
-    }
-
-    .submit-btn {
-        padding: 1rem; /* Button padding adjust */
+        grid-template-columns: 1fr; 
     }
 
     /* 4. FOOTER FIX */
     .footer-flex {
-        flex-direction: column;
+        flex-direction: column !important; /* Stack vertically */
         gap: 30px;
         text-align: center;
     }
 
     .footer-section {
-        margin-right: 0;
+        margin-right: 0 !important;
         width: 100%;
     }
 }
-
-/* --- Tablet View (Max Width: 1024px) --- */
-@media screen and (max-width: 1024px) {
-    .container {
-        width: 90%;
-        margin: 2rem auto;
-    }
-
-    .feedback-form {
-        padding: 2rem; /* Tablet par padding thodi kam */
-    }
-}
-

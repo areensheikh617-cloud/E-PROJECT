@@ -1,3 +1,6 @@
+/* =========================================
+   1. GLOBAL SETTINGS
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -9,24 +12,26 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-      background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
+    background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow-x: hidden; 
 }
 
-/* Header Styles */
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
 .hero-section {
-    /* Background Image setup */
-    background:linear-gradient( to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
+    background: linear-gradient( to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
     url('./CONTENT/climate-summit.png');
     background-size: cover;
     background-position: center;
     height: 750px;
     position: relative;
     border-radius: 0 0 20px 20px;
-
+    width: 100%;
 }
 
 .navbar {
@@ -41,9 +46,9 @@ body {
     list-style: none;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     gap: 30px;
-
+    padding: 0 10px; /* Thoda padding taaki mobile pe edge se na chipke */
 }
 
 .nav-links a {
@@ -61,6 +66,13 @@ body {
 .nav-links a:hover {
     color: white;
 }
+
+.nav-links a.active {
+    color: white;
+    border-bottom: 3px solid #c5a065;
+}
+
+/* Buttons */
 .bt {
      padding: 10px 30px ;
      font-size: 16px;
@@ -68,305 +80,341 @@ body {
      cursor: pointer;
      transition: 0.3s;
      font-weight: bold;
+     color: white; 
  }
 
-
- .btn-login {
+ .btn-login, .btn-signup {
      background-color: maroon;
      border-radius: 20px;
      border: 2px solid rgba(0, 0, 0, 0.8);
  }
 
- .btn-login:hover {
+ .btn-login:hover, .btn-signup:hover {
      background-color: grey;
  }
 
-
- .btn-signup {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-signup:hover {
-     background-color:gray;
- }
-
-/* Active Link (Golden Underline) */
-.nav-links a.active {
-    color: white;
-    border-bottom: 3px solid #c5a065;
+/* =========================================
+   3. HERO CONTENT
+   ========================================= */
+.hero {
+     max-width: 1400px;
+     margin: 150px auto 0 auto; 
+     padding: 0 5%;
 }
 
-  .hero {
-     padding: 0 5%;
-     margin-top: 150px;
-     margin-left: 80px;
- }
-
- /* The Pro Gradient Overlay */
-
- .hero-content {
+.hero-content {
      max-width: 650px;
      color: white;
- }
+}
 
- .hero h1 {
+.hero h1 {
      font-family: 'Oswald', sans-serif;
      font-size: 5.3rem;
      line-height: 1.1;
      margin-bottom: 20px;
      text-transform: uppercase;
      color: rgb(213, 213, 213);
- }
+}
 
- .hero p {
+.hero p {
      font-size: 1.2rem;
      margin-bottom: 30px;
      border-left: 4px solid #cc0000;
-     /* Stylish accent line */
      padding-left: 15px;
      background: rgba(0, 0, 0, 0.3);
-     /* Subtle background */
- }
+}
 
- .btn {
-     padding: 15px 40px;
-     background-color: white;
-     color: black;
-     text-decoration: none;
-     font-weight: bold;
-     text-transform: uppercase;
-     transition: 0.3s;
- }
+.btn {
+    padding: 15px 40px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    display: inline-block;
+    border-radius: 5px;
+}
 
- .btn:hover {
-     background-color: #cc0000;
-     color: white;
- }
+.btn:hover {
+    background-color: #cc0000;
+    color: white;
+}
 
- /* --- LAYOUT --- */
- .container {
-     width: 1200px;
-     margin: 40px auto;
-     background: #ffffff;
-     /* White Container */
-     padding: 50px;
-     border-radius: 8px;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
- }
+/* --- 3. LAYOUT CONTAINER (FIXED) --- */
+.container {
+    /* Fixed 1200px hata kar responsive width lagayi */
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
 
- /* --- HEADER SECTION --- */
- header {
-     border-bottom: 1px solid #e0e0e0;
-     padding-bottom: 20px;
-     margin-bottom: 30px;
- }
+/* --- HEADER SECTION INSIDE ARTICLE --- */
+header {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
 
- .category-tag {
-     background-color: #28a745;
-     /* Green for Environment */
-     color: #ffffff;
-     padding: 5px 12px;
-     font-size: 0.8rem;
-     text-transform: uppercase;
-     font-weight: bold;
-     border-radius: 20px;
-     display: inline-block;
-     margin-bottom: 15px;
- }
+.category-tag {
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
 
- h1 {
-     font-size: 2.5rem;
-     color: #1e3a5f;
-     /* Deep Blue Header */
-     font-weight: 700;
-     margin-bottom: 15px;
-     line-height: 1.2;
- }
+h1 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: #1e3a5f;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
 
- .meta-info {
-     color: #666666;
-     font-size: 0.95rem;
-     display: flex;
-     align-items: center;
-     gap: 15px;
- }
+.meta-info {
+    color: #666666;
+    font-size: 0.95rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
 
- .meta-info strong {
-     color: #1e3a5f;
- }
+.meta-info strong {
+    color: #1e3a5f;
+}
 
- /* --- CONTENT STYLING --- */
- .article-body {
-     font-size: 1.125rem;
-     color: #2c3e50;
- }
+/* --- CONTENT STYLING --- */
+.article-body {
+    font-size: 1.125rem;
+    color: #2c3e50;
+}
 
- .article-body p {
-     margin-bottom: 25px;
- }
+.article-body p {
+    margin-bottom: 25px;
+}
 
- /* Highlight Box */
- .highlight-box {
-     background-color: #f0fdf4;
-     /* Very Light Green bg */
-     border-left: 5px solid #28a745;
-     padding: 20px 25px;
-     margin: 30px 0;
-     border-radius: 4px;
- }
+.highlight-box {
+    background-color: #f0fdf4;
+    border-left: 5px solid #28a745;
+    padding: 20px 25px;
+    margin: 30px 0;
+    border-radius: 4px;
+}
 
- .highlight-box h3 {
-     color: #28a745;
-     margin-bottom: 10px;
-     font-size: 1.3rem;
- }
+.highlight-box h3 {
+    color: #28a745;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
 
- .highlight-box ul {
-     padding-left: 20px;
- }
+.highlight-box ul {
+    padding-left: 20px;
+}
 
- .highlight-box li {
-     margin-bottom: 8px;
- }
+h2 {
+    color: #1e3a5f;
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-left: 4px solid #28a745;
+    padding-left: 15px;
+}
 
- /* Subheadings */
- h2 {
-     color: #1e3a5f;
-     font-size: 1.8rem;
-     margin-top: 40px;
-     margin-bottom: 20px;
-     border-left: 4px solid #28a745;
-     /* Green accent border for this topic */
-     padding-left: 15px;
- }
+/* --- DATA TABLE RESPONSIVE --- */
+.table-wrapper {
+    overflow-x: auto; /* Table scroll container */
+    margin: 30px 0;
+}
 
- /* Data Table */
- .data-table {
-     width: 100%;
-     border-collapse: collapse;
-     margin: 30px 0;
-     font-size: 1rem;
- }
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    min-width: 600px; /* Forces scroll on small screens */
+}
 
- .data-table th {
-     background-color: #1e3a5f;
-     color: #ffffff;
-     text-align: left;
-     padding: 12px 15px;
- }
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
 
- .data-table td {
-     border: 1px solid #e0e0e0;
-     padding: 12px 15px;
- }
+.data-table th {
+    background-color: #1e3a5f;
+    color: #ffffff;
+}
 
- .data-table tr:nth-child(even) {
-     background-color: #f9f9f9;
- }
+.data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
- .positive-change {
-     color: #28a745;
-     /* Green for positive outcome */
-     font-weight: bold;
- }
+.positive-change { color: #28a745; font-weight: bold; }
+.neutral-change { color: #e67e22; font-weight: bold; }
 
- .neutral-change {
-     color: #e67e22;
-     /* Orange for in-progress */
-     font-weight: bold;
- }
+.a-footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
 
+.back-btn {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s;
+}
 
- .a-footer {
-     margin-top: 50px;
-     padding-top: 20px;
-     border-top: 1px solid #e0e0e0;
-     text-align: center;
- }
+.back-btn:hover {
+    background-color: #152a45;
+}
 
- .back-btn {
-     background-color: #1e3a5f;
-     color: #ffffff;
-     padding: 12px 30px;
-     text-decoration: none;
-     border-radius: 5px;
-     font-weight: bold;
-     transition: background 0.3s;
- }
+/* --- FOOTER --- */
+footer {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 3rem 0 1rem 0;
+    border-radius: 30px 30px 0 0;
+    margin-top: 3rem;
+}
 
- .back-btn:hover {
-     background-color: #152a45;
- }
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
- /* Footer */
- footer {
-     background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-     color: white;
-     padding: 30px 0 1rem 0;
-     border-radius: 30px;
-     margin-top: 3rem;
- }
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Important for mobile wrap */
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
 
- .footer-container {
-     max-width: 1200px;
-     margin: 0 auto;
-     padding: 0 20px;
- }
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 0; /* Remove fixed margin */
+}
 
- .footer-flex {
-     display: flex;
-     align-items: flex-start;
-     gap: 2rem;
-     margin-bottom: 2rem;
- }
+.footer-section h3 { margin-bottom: 1rem; color: #ffd700; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 0.5rem; }
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+.footer-section a:hover { opacity: 1; color: #ffd700; }
 
- .footer-section {
-     margin-right: 80px;
- }
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.8;
+}
 
- .footer-section h3 {
-     margin-bottom: 1rem;
-     color: #ffd700;
- }
+/* --- MOBILE RESPONSIVENESS (Strong Fixes) --- */
+@media (max-width: 768px) {
+    
+     /* --- 2. HEADER & NAVBAR FIX --- */
+    .navbar {
+        padding: 15px 0 !important;
+        height: auto;
+    }
 
- .footer-section ul {
-     list-style: none;
- }
+    .nav-links {
+        flex-direction: row !important; /* Links side-by-side */
+        justify-content: center !important;
+        flex-wrap: wrap !important; /* Agar jagah kam ho to wrap kare */
+        gap: 10px !important;
+        padding: 0 10px;
+    }
 
- .footer-section ul li {
-     margin-bottom: 0.5rem;
- }
+    .nav-links a {
+        font-size: 13px !important; /* Font chhota kiya taaki fit aaye */
+        padding: 5px;
+    }
 
- .footer-section a {
-     color: white;
-     text-decoration: none;
-     opacity: 0.9;
-     transition: opacity 0.3s;
- }
+    .bt {
+        padding: 8px 15px !important; /* Login buttons chote kiye */
+        font-size: 12px !important;
+    }
 
- .footer-section a:hover {
-     opacity: 1;
-     color: #ffd700;
- }
+    /* --- 3. HERO SECTION FIX --- */
+    .hero-section {
+        height: auto !important;
+        min-height: 600px; /* Mobile par height adjust ki */
+        background-position: center center !important;
+    }
 
- .footer-bottom {
-     text-align: center;
-     padding-top: 2rem;
-     border-top: 1px solid rgba(255, 255, 255, 0.1);
-     opacity: 0.8;
- }
+    .hero {
+        margin-left: 0 !important;
+        margin-top: 60px !important;
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .hero h1 {
+        font-size: 2.5rem !important; /* Heading adjust ki */
+        line-height: 1.2;
+    }
 
- /* --- MOBILE RESPONSIVENESS --- */
- @media (max-width: 768px) {
-     .container {
-         padding: 25px;
-         margin: 20px;
-     }
+    /* "Stay informed..." text fix */
+    .hero p {
+        font-size: 14px !important;
+        width: 90% !important;
+        max-width: 400px !important;
+        margin: 10px auto 20px auto !important;
+        border-left: none !important; /* Side border hataya */
+        background: rgba(0, 0, 0, 0.5) !important;
+        padding: 15px !important;
+        border-radius: 10px;
+    }
 
-     h1 {
-         font-size: 2rem;
-     }
- }
+    /* Container Fixes */
+    .container {
+        width: 95%; /* Use almost full width on mobile */
+        padding: 25px 20px;
+        margin: 20px auto;
+    }
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+
+    /* Footer Fixes */
+    .footer-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-right: 0;
+        width: 100%;
+    }
+    
+    /* Table Fix */
+    .data-table {
+        display: block;
+        overflow-x: auto;
+    }
+}

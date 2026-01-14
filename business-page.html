@@ -9,6 +9,7 @@
         rel="stylesheet">
 </head>
 <body>
+    <script src="./jquery-3.7.1.js"></script>
        <!-- Header -->
       <header class="hero-section">
         <nav class="navbar">
@@ -23,8 +24,8 @@
                     <li><a href="./feedback-page.html" target="_blank">FEEDBACK</a></li>
                  
                       
-                <li><a href="./login.html" target="_blank" class="bt btn-login">LOGIN</a></li>
-                <li><a href="./signup.html" target="_blank" class="bt btn-signup">SIGN UP</a></li>
+                <!-- <li><a href="./login.html" target="_blank" class="bt btn-login">LOGIN</a></li>
+                <li><a href="./signup.html" target="_blank" class="bt btn-signup">SIGN UP</a></li> -->
 
 
             </ul>
@@ -100,7 +101,9 @@
                 <div class="news-content">
                     <span class="news-category">IPO & Capital Markets</span>
                     <h3>Pakistan Set for Up to 16 IPOs as Stock Rally Continues</h3>
-                    <p>Pakistan's blistering stock rally and surging retail participation are drawing companies back to the equity market. Investment bankers predict up to 16 initial public offerings (IPOs) in the coming months as businesses capitalize on favorable market conditions.</p>
+                    <p>Pakistan's blistering stock rally and surging retail participation are drawing companies back to the equity market.</p>
+                            <button class="hide1" id="btn">Read More..</button>
+                         <p  class="show1"> Investment bankers predict up to 16 initial public offerings (IPOs) in the coming months as businesses capitalize on favorable market conditions.</p>
                     <div class="news-meta">
                         <span>December 10, 2025</span>
                        
@@ -116,7 +119,9 @@
                 <div class="news-content">
                     <span class="news-category">Startups & Investment</span>
                     <h3>Pakistan Startups Raise $58 Million in Q2 2025</h3>
-                    <p>Q2 2025 marked a quarter of rejuvenation for Pakistan's startup ecosystem. Five deals brought in a total of $58 million, the highest funding in 10 quarters. The fintech sector remained the epicenter, with Haball's historic raise leading the way.</p>
+                    <p>Q2 2025 marked a quarter of rejuvenation for Pakistan's startup ecosystem. Five deals brought in a total of $58 million,</p>
+                            <button class="hide2" id="btn">Read More..</button>
+                         <p  class="show2"> the highest funding in 10 quarters. The fintech sector remained the epicenter, with Haball's historic raise leading the way.</p>
                     <div class="news-meta">
                         <span>October 2025</span>
                        
@@ -132,14 +137,18 @@
                 <div class="news-content">
                     <span class="news-category">Banking & Finance</span>
                     <h3>SBP Reserves Near $16 Billion Mark</h3>
-                    <p>State Bank of Pakistan's foreign exchange reserves are approaching the $16 billion threshold, providing crucial support for economic stability. The improved reserves position has strengthened the Pakistani Rupee and boosted investor confidence in the economy.</p>
+                    <p>State Bank of Pakistan's foreign exchange reserves are approaching the $16 billion threshold,</p>
+                            <button class="hide3" id="btn">Read More..</button>
+                         <p  class="show3"> providing crucial support for economic stability. The improved reserves position has strengthened the Pakistani Rupee and boosted investor confidence in the economy.</p>
                     <div class="news-meta">
                         <span>December 2025</span>
                        
                     </div>
                 </div>
             </div>
+        </div>
 
+        <div class="news-grid">
             <!-- News Card 4 -->
             <div class="news-card">
                 <div class="news-image">
@@ -148,7 +157,9 @@
                 <div class="news-content">
                     <span class="news-category">Technology & Digital</span>
                     <h3>Pakistan Attracts $700M in IT Investments</h3>
-                    <p>Pakistan has secured over $700 million in international digital investments as the country pursues "Digital Nation" status. The technology sector continues to be a major growth driver, with increasing interest from global investors in Pakistani tech startups.</p>
+                    <p>Pakistan has secured over $700 million in international digital investments as the country pursues</p>
+                            <button class="hide4" id="btn">Read More..</button>
+                         <p  class="show4"> "Digital Nation" status. The technology sector continues to be a major growth driver, with increasing interest from global investors in Pakistani tech startups.</p>
                     <div class="news-meta">
                         <span>November 16, 2025</span>
                        
@@ -164,7 +175,9 @@
                 <div class="news-content">
                     <span class="news-category">Sectors & Industries</span>
                     <h3>Pakistan's Dual Economies: Stock Market vs Factory Floor</h3>
-                    <p>In late 2025, Pakistan presents a stark economic reality - a tale of two economies. While the stock market reaches record highs, the manufacturing sector faces challenges. Analysts examine this divergence and its implications for sustainable growth.</p>
+                    <p>In late 2025, Pakistan presents a stark economic reality - a tale of two economies.</p>
+                            <button class="hide5" id="btn">Read More..</button>
+                         <p  class="show5"> While the stock market reaches record highs, the manufacturing sector faces challenges. Analysts examine this divergence and its implications for sustainable growth.</p>
                     <div class="news-meta">
                         <span>December 15, 2025</span>
                        
@@ -180,7 +193,9 @@
                 <div class="news-content">
                     <span class="news-category">Partnerships & Development</span>
                     <h3>IFC Reviews Steps to Unlock Private Investment in Pakistan</h3>
-                    <p>Pakistan and the International Finance Corporation (IFC) are reviewing strategic steps to unlock private investment and create jobs. Discussions focus on public-private partnerships and mobilizing private capital for infrastructure and development projects.</p>
+                    <p>Pakistan and the International Finance Corporation (IFC) are reviewing strategic</p>
+                            <button class="hide6" id="btn">Read More..</button>
+                         <p  class="show6"> steps to unlock private investment and create jobs. Discussions focus on public-private partnerships and mobilizing private capital for infrastructure and development projects.</p>
                     <div class="news-meta">
                         <span>December 18, 2025</span>
                        
@@ -217,27 +232,33 @@
         </div>
 
         <!-- More News Section -->
-        <div class="business-stories">
-            <h2>🔍 More Business Stories</h2>
-            <div style="display: flex; gap: 1rem;">
-                <div style="padding: 1rem; border-left: 4px solid #667eea; background: #f5f7fa;">
-                    <h4 style="color: #1e3c72; margin-bottom: 0.5rem;">Ignite Showcases 10 Pakistani Startups at LEAP 2025</h4>
-                    <p style="color: #666; font-size: 0.95rem;">Pakistani startups spanning AgriTech, FinTech, AI, SaaS, AR/VR, and CleanTech showcase innovation at global technology conference.</p>
-                </div>
-                <div style="padding: 1rem; border-left: 4px solid #667eea; background: #f5f7fa;">
-                    <h4 style="color: #1e3c72; margin-bottom: 0.5rem;">Top Pakistani Startups to Watch: Saraaf, Bazaar, Farmdar</h4>
-                    <p style="color: #666; font-size: 0.95rem;">Promising Pakistani ventures including Saraaf, Bazaar Technologies, Farmdar, and PostEx are gearing up for significant growth in 2025.</p>
-                </div>
-                <div style="padding: 1rem; border-left: 4px solid #667eea; background: #f5f7fa;">
-                    <h4 style="color: #1e3c72; margin-bottom: 0.5rem;">PSX Launches Cash Settled Futures Trading</h4>
-                    <p style="color: #666; font-size: 0.95rem;">Pakistan Stock Exchange introduces new financial instruments to enhance market depth and provide more investment opportunities.</p>
-                </div>
-                <div style="padding: 1rem; border-left: 4px solid #667eea; background: #f5f7fa;">
-                    <h4 style="color: #1e3c72; margin-bottom: 0.5rem;">World Bank Supports Pakistan's Gas Sector Sustainability</h4>
-                    <p style="color: #666; font-size: 0.95rem;">International support strengthens Pakistan's energy infrastructure and sustainability initiatives in the natural gas sector.</p>
-                </div>
-            </div>
+      <div class="business-stories-container">
+    <h3 class="stories-header">
+        🔍 More Business Stories
+    </h3>
+
+    <div class="stories-grid">
+        <div class="story-card">
+            <h4>Ignite Showcases</h4>
+            <p>10 Pakistani Startups at LEAP 2025. Spanning AgriTech, FinTech, and AI.</p>
         </div>
+
+        <div class="story-card">
+            <h4>Top Startups</h4>
+            <p>Pakistani Startups to Watch: Saraaf, Bazaar, Farmdar gearing up for growth.</p>
+        </div>
+
+        <div class="story-card">
+            <h4>PSX Launches</h4>
+            <p>Cash Settled Futures Trading. Pakistan Stock Exchange introduces new instruments.</p>
+        </div>
+
+        <div class="story-card no-border">
+            <h4>World Bank Support</h4>
+            <p>Pakistan Gas Sector reforms supported by international infrastructure initiatives.</p>
+        </div>
+    </div>
+</div>
     </div>
 
     <!-- Footer -->
@@ -287,5 +308,40 @@
             </div>
         </div>
     </footer>
+     <script>
+           $(".hide1").click(function () {
+                $(".show1").slideToggle()
+            })
+            $(".show1").hide()
+             
+            
+            $(".hide2").click(function () {
+                $(".show2").slideToggle()
+            })
+            $(".show2").hide()
+
+               $(".hide3").click(function () {
+                $(".show3").slideToggle()
+            })
+            $(".show3").hide()
+
+
+            $(".hide4").click(function () {
+                $(".show4").slideToggle()
+            })
+            $(".show4").hide()
+
+
+            $(".hide5").click(function () {
+                $(".show5").slideToggle()
+            })
+            $(".show5").hide()
+
+
+            $(".hide6").click(function () {
+                $(".show6").slideToggle()
+            })
+            $(".show6").hide()
+        </script>
 </body>
 </html>

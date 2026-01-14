@@ -22,19 +22,15 @@
                 <li><a href="./cities.html" target="_blank">CITIES</a></li>
                 <li><a href="./contact-page.html" target="_blank">CONTACT US</a></li>
                 <li><a href="#feedback" class="active">FEEDBACK</a></li>
-                
-                <li><a href="./login.html" target="_blank" class="bt btn-login">LOGIN</a></li>
-                <li><a href="./signup.html" target="_blank" class="bt btn-signup">SIGN UP</a></li>
-
             </ul>
         </nav>
 
         <div class="hero">
-        <div class="hero-content">
-            <h1>💬 Your Feedback Matters</h1>
-            <p>Whether you have a breaking news tip, editorial feedback, or a business inquiry, our team is ready to listen. Reach out to us today and help shape the conversation.</p>
-            <a href="#feedback" class="btn">READ MORE..</a>
-        </div>
+            <div class="hero-content">
+                <h1>💬 Your Feedback Matters</h1>
+                <p>Whether you have a breaking news tip, editorial feedback, or a business inquiry, our team is ready to listen. Reach out to us today and help shape the conversation.</p>
+                <a href="#feedback" class="btn">READ MORE..</a>
+            </div>
         </div>
     </header>
 
@@ -71,23 +67,23 @@
                     <label>OVERALL RATINGS</label>
                     <div class="rating-group">
                         <div class="rating-option">
-                            <input type="radio" id="rating5" value="5" required>
+                            <input type="radio" name="rating" id="rating5" value="5" required>
                             <label for="rating5" class="rating-label">⭐⭐⭐⭐⭐<br>Excellent</label>
                         </div>
                         <div class="rating-option">
-                            <input type="radio" id="rating4" value="4">
+                            <input type="radio" name="rating" id="rating4" value="4">
                             <label for="rating4" class="rating-label">⭐⭐⭐⭐<br>Good</label>
                         </div>
                         <div class="rating-option">
-                            <input type="radio" id="rating3" value="3">
+                            <input type="radio" name="rating" id="rating3" value="3">
                             <label for="rating3" class="rating-label">⭐⭐⭐<br>Average</label>
                         </div>
                         <div class="rating-option">
-                            <input type="radio" id="rating2" value="2" style="width: 120px;">
+                            <input type="radio" name="rating" id="rating2" value="2" style="width: 120px;">
                             <label for="rating2" class="rating-label">⭐⭐<br>Poor</label>
                         </div>
                         <div class="rating-option">
-                            <input type="radio" id="rating1" value="1">
+                            <input type="radio" name="rating" id="rating1" value="1">
                             <label for="rating1" class="rating-label">⭐<br>Very Poor</label>
                         </div>
                     </div>
@@ -116,18 +112,6 @@
                     </div>
                 </div>
 
-                <!-- <div class="form-group">
-                    <label for="content-quality">Content Quality Rating *</label>
-                    <select id="content-quality" name="content-quality" required>
-                        <option value="">-- Select Rating --</option>
-                        <option value="5">Excellent - Always accurate and informative</option>
-                        <option value="4">Good - Usually accurate and helpful</option>
-                        <option value="3">Average - Sometimes helpful</option>
-                        <option value="2">Below Average - Needs improvement</option>
-                        <option value="1">Poor - Rarely helpful</option>
-                    </select>
-                </div> -->
-
                 <div class="form-group">
                     <label for="website-experience">Website Experience *</label>
                     <select id="website-experience" name="website-experience" required>
@@ -145,11 +129,6 @@
                     <textarea id="improvements" name="improvements" required
                         placeholder="Please share your suggestions for improvement..."></textarea>
                 </div>
-
-                <!-- <div class="form-group">
-                    <label for="favorite-feature">What do you like most about DNBC News?</label>
-                    <textarea id="favorite-feature" name="favorite-feature" placeholder="Tell us what you love about our service..."></textarea>
-                </div> -->
 
                 <div class="form-group">
                     <label for="recommend">Would you recommend DNBC News to others? *</label>
@@ -177,8 +156,6 @@
             <h3>🔒 Privacy Notice</h3>
             <p>Your feedback is confidential and will only be used to improve our services. We do not share your
                 personal information with third parties.</p>
-        </div>
-        </div>
         </div>
     </section>
 
@@ -228,6 +205,53 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // 1. Form aur Button ko select karein
+        const feedbackForm = document.querySelector('form');
+        const submitBtn = document.querySelector('.submit-btn');
+
+        // 2. Submit hone par function chalayein
+        feedbackForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Page ko refresh hone se rokein
+
+            // --- UX: Button ko disable karein taake user wait kare ---
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "Submitting...";
+            submitBtn.style.opacity = "0.7";
+            submitBtn.disabled = true;
+
+            // --- Data collect karein (Console mein dekhne ke liye) ---
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            // Rating check karna 
+            let ratingValue = "Not Selected";
+            const selectedRating = document.querySelector('input[name="rating"]:checked');
+            if (selectedRating) {
+                ratingValue = selectedRating.value;
+            }
+
+            // --- Fake Processing Delay (2 Seconds) ---
+            setTimeout(() => {
+                console.log("New Feedback Received!");
+                console.log("Name:", name);
+                console.log("Rating:", ratingValue);
+
+                // 3. Success Message
+                alert("Thank you! Your feedback has been submitted successfully.");
+
+                // 4. Form Reset (Sab inputs khali karein)
+                feedbackForm.reset();
+
+                // 5. Button wapis normal karein
+                submitBtn.textContent = originalText;
+                submitBtn.style.opacity = "1";
+                submitBtn.disabled = false;
+
+            }, 2000); // 2000 milliseconds = 2 seconds
+        });
+    </script>
 </body>
 
 </html>

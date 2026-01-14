@@ -193,13 +193,15 @@ a{
 }
  
  /* Info Boxes */
+
 .info-box {
     background: white;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     margin-bottom: 2rem;
-    width: 600px;
+    width: 100%; /* Fixed: 600px hata diya */
+    max-width: 600px; /* Limit laga di */
 }
 
 .info-box h3 {
@@ -245,17 +247,21 @@ a{
 }
 
 /* Cards */
-.card {
+
+.card, .card-1 {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: all 0.3s ease;
-    height: 700px;
-    width: 350%;
+    width: 100%; /* Fixed: 350% se 100% kar diya */
     display: flex;
-  
+    /* Height auto rakhein taaki content na kate */
+    height: auto; 
 }
+
+
+
 
 .card:hover {
     transform: translateY(-5px);
@@ -330,23 +336,11 @@ a{
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+
 .map-container iframe {
     width: 100%;
-    height: 500px;
+    height: 100%; /* Fixed: Parent ke hisab se height lega */
     border: none;
-}
-/* Cards1 */
-.card-1 {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    height: 200px;
-    width: 350%;
-    padding: 5px 5px;
-    display: flex;
-  
 }
 
 .card-1:hover {
@@ -430,27 +424,42 @@ a{
 /* =======================================================
    CITIES PAGE RESPONSIVE FIX (Mobile & Tablet)
    ======================================================= */
+/* =======================================================
+   RESPONSIVE DESIGN (FIXED & OPTIMIZED)
+   ======================================================= */
 
+/* --- Tablet View (Max Width: 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    /* Tablet par 2 columns theek rahenge */
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px;
+    }
+}
+
+/* --- Mobile View (Max Width: 768px) --- */
 @media screen and (max-width: 768px) {
 
-    /* 1. CONTAINER & LAYOUT */
+    /* 1. GLOBAL LAYOUT */
     .container {
-        width: 95% !important;
-        padding: 0 10px !important;
+        width: 100% !important;
+        padding: 0 15px !important;
         overflow-x: hidden;
     }
 
-    /* .flex class jo sidebar aur content ko jod rahi hai */
+    /* 2. GRID SYSTEM (Sabse Important) */
     .grid {
         display: grid !important;
-        grid-template-columns: 1fr 1fr; /* Side-by-side se hata kar upar-niche kiya */
+        /* Mobile par 1 Column hona chahiye, 2 nahi */
+        grid-template-columns: 1fr !important; 
         gap: 30px !important;
-        margin-top: 20px !important;
-    }
-
-    .container {
-        width: 100%;
-        padding: 0 15px;
+        margin-top: 30px !important;
     }
 
     /* --- 2. HEADER & NAVBAR FIX --- */
@@ -510,38 +519,37 @@ a{
         padding: 15px !important;
         border-radius: 10px;
     }
-
-    /* 3. INFO BOX (Sidebar) FIX */
-    .info-box {
-        width: 100% !important; /* 600px fixed width hatayi */
-        padding: 1.5rem !important;
-    }
-
-    /* 4. CARDS WIDTH FIX (Critical) */
+    /* 5. CARDS FIX */
     .card, .card-1 {
-        width: 100% !important; /* 350% width hatayi */
-        height: auto !important; /* Fixed height hatayi taaki content na kate */
         flex-direction: column !important; /* Image upar, text niche */
+        width: 100% !important;
+        height: auto !important;
     }
 
     .card-image {
-        height: 200px !important;
         width: 100% !important;
+        height: 200px !important;
     }
 
-    /* 5. MAP FIX */
+    .card-content {
+        padding: 20px !important;
+    }
+
+    /* 6. INFO BOX & MAP */
+    .info-box {
+        width: 100% !important;
+        padding: 1.5rem !important;
+    }
+
     .map-container {
         height: 300px !important;
     }
-    
-    .map-container iframe {
-        height: 100% !important;
-    }
 
-    /* 6. FOOTER FIX */
+    /* 7. FOOTER FIX */
     .footer-flex {
-        flex-direction: column !important;
-        text-align: center;
+        flex-direction: column !important; /* Stack vertically */
+        align-items: center !important;
+        text-align: center !important;
         gap: 30px;
     }
 

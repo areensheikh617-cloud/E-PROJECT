@@ -1,7 +1,13 @@
+/* --- 1. GLOBAL SETTINGS (Responsiveness ki bunyad) --- */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Padding width ko kharab nahi karegi */
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Left-right scroll band */
 }
 
 body {
@@ -9,378 +15,269 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-      background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
+    background-image: url('CONTENT/Screenshot 2026-01-04 155648.png'); 
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-/* Header Styles */
+/* --- 2. HEADER & HERO (Flexible Height) --- */
 .hero-section {
-    /* Background Image setup */
-    background:linear-gradient( to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
-    url('./CONTENT/psx.png');
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('./CONTENT/psx.png');
     background-size: cover;
     background-position: center;
-    height: 750px;
-    position: relative;
-    border-radius: 0 0 20px 20px;
-
+    /* Height fix nahi rakhi, content ke hisaab se badhegi */
+    min-height: 80vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 50px 20px;
 }
 
+/* Navbar Setup */
 .navbar {
     width: 100%;
-    padding: 40px 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 0 0 30px 30px;
-    border-bottom: 1px solid red;
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-
+    flex-wrap: wrap; /* Agar screen choti ho to links neeche aa jayein */
+    gap: 25px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #e0e0e0;
-    font-size: 20px;
+    color: #fff;
+    font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    position: relative;
-    padding-bottom: 10px;
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: white;
-}
-.bt {
-     padding: 10px 30px ;
-     font-size: 16px;
-     border-radius: 5px;
-     cursor: pointer;
-     transition: 0.3s;
-     font-weight: bold;
- }
-
-
- .btn-login {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-login:hover {
-     background-color: grey;
- }
-
-
- .btn-signup {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-signup:hover {
-     background-color:gray;
- }
-
-/* Active Link (Golden Underline) */
-.nav-links a.active {
-    color: white;
-    border-bottom: 3px solid #c5a065;
+    color: #ffd700;
 }
 
-  .hero {
-     padding: 0 5%;
-     margin-top: 150px;
-     margin-left: 80px;
- }
+/* Hero Content */
+.hero {
+    width: 100%;
+    max-width: 900px; /* Text bohot zyada fail na jaye */
+    color: white;
+}
 
- /* The Pro Gradient Overlay */
+.hero h1 {
+    font-family: 'Oswald', sans-serif;
+    /* Responsive Font: Screen ke hisaab se chota bada hoga */
+    font-size: clamp(2rem, 5vw, 4.5rem); 
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #fff;
+}
 
- .hero-content {
-     max-width: 650px;
-     color: white;
- }
+.hero p {
+    font-size: 1.2rem;
+    margin: 0 auto 30px auto;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-left: 5px solid #cc0000;
+    max-width: 700px;
+    text-align: left; /* Reading ke liye easy */
+}
 
- .hero h1 {
-     font-family: 'Oswald', sans-serif;
-     font-size: 5.3rem;
-     line-height: 1.1;
-     margin-bottom: 20px;
-     text-transform: uppercase;
-     color: rgb(213, 213, 213);
- }
+.btn {
+    padding: 15px 40px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
 
- .hero p {
-     font-size: 1.2rem;
-     margin-bottom: 30px;
-     border-left: 4px solid #cc0000;
-     /* Stylish accent line */
-     padding-left: 15px;
-     background: rgba(0, 0, 0, 0.3);
-     /* Subtle background */
- }
+.btn:hover {
+    background-color: #cc0000;
+    color: white;
+}
 
- .btn {
-     padding: 15px 40px;
-     background-color: white;
-     color: black;
-     text-decoration: none;
-     font-weight: bold;
-     text-transform: uppercase;
-     transition: 0.3s;
- }
+/* --- 3. MAIN CONTAINER (Jahan content cut raha tha) --- */
+.container {
+    /* Fixed pixel hata kar % width lagayi hai */
+    width: 90%; 
+    max-width: 900px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
- .btn:hover {
-     background-color: #cc0000;
-     color: white;
- }
+/* Content Styles */
+h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: #1e3a5f;
+    margin-bottom: 15px;
+}
 
+.highlight-box {
+    background-color: #f0fdf4;
+    border-left: 5px solid #28a745;
+    padding: 20px;
+    margin: 20px 0;
+}
 
- /* --- LAYOUT --- */
- .container {
-     max-width: 900px;
-     margin: 40px auto;
-     background: #ffffff;
-     /* White Container */
-     padding: 50px;
-     border-radius: 8px;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
- }
+.article-body p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-align: left;
+}
 
- /* --- HEADER SECTION --- */
- .psx {
-     border-bottom: 1px solid #e0e0e0;
-     /* Light border */
-     padding-bottom: 20px;
-     margin-bottom: 30px;
- }
+/* Table Scroll Fix */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Table screen se bahar nahi niklega, scroll hoga */
+    margin: 30px 0;
+    border: 1px solid #ddd;
+}
 
- .category-tag {
-     background-color: #c0392b;
-     /* Business Red */
-     color: #ffffff;
-     padding: 5px 12px;
-     font-size: 0.8rem;
-     text-transform: uppercase;
-     font-weight: bold;
-     border-radius: 20px;
-     display: inline-block;
-     margin-bottom: 15px;
- }
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Force table width so it scrolls */
+}
 
- h1 {
-     font-size: 2.5rem;
-     color: #1e3a5f;
-     /* Deep Blue Header */
-     font-weight: 700;
-     margin-bottom: 15px;
-     line-height: 1.2;
- }
+.data-table th, .data-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
 
- .meta-info {
-     color: #666666;
-     /* Muted text */
-     font-size: 0.95rem;
-     display: flex;
-     align-items: center;
-     gap: 15px;
- }
+.data-table th {
+    background: #1e3a5f;
+    color: white;
+}
 
- .meta-info strong {
-     color: #1e3a5f;
-     /* Deep Blue accent */
- }
+/* --- 4. FOOTER --- */
+footer {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 3rem 0 1rem 0;
+    border-radius: 30px 30px 0 0;
+    margin-top: 3rem;
+    width: 100%;
+}
 
- /* --- CONTENT STYLING --- */
- .article-body {
-     font-size: 1.125rem;
-     color: #2c3e50;
- }
+.footer-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
- .article-body p {
-     margin-bottom: 25px;
- }
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
 
- /* Highlight Box */
- .highlight-box {
-     background-color: #f0fdf4;
-     /* Very Light Green bg */
-     border-left: 5px solid #28a745;
-     /* PSX Green border */
-     padding: 20px 25px;
-     margin: 30px 0;
-     border-radius: 4px;
- }
+.footer-section { flex: 1; min-width: 200px; }
+.footer-section h3 { color: #ffd700; margin-bottom: 1rem; }
+.footer-section ul { list-style: none; }
+.footer-section a { color: white; text-decoration: none; opacity: 0.9; }
+.footer-section a:hover { opacity: 1; color: #ffd700; }
+.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); opacity: 0.8; }
 
- .highlight-box h3 {
-     color: #28a745;
-     /* PSX Green text */
-     margin-bottom: 10px;
-     font-size: 1.3rem;
- }
+/* --- 5. RESPONSIVE MEDIA QUERY (The Fix) --- */
+@media screen and (max-width: 768px) {
+    
+    /* Navbar Adjustment */
+    /* --- 2. HEADER & NAVBAR FIX --- */
+    .navbar {
+        padding: 15px 0 !important;
+        height: auto;
+    }
 
- .highlight-box ul {
-     padding-left: 20px;
- }
+    .nav-links {
+        flex-direction: row !important; /* Links side-by-side */
+        justify-content: center !important;
+        flex-wrap: wrap !important; /* Agar jagah kam ho to wrap kare */
+        gap: 10px !important;
+        padding: 0 10px;
+    }
 
- .highlight-box li {
-     margin-bottom: 8px;
- }
+    .nav-links a {
+        font-size: 13px !important; /* Font chhota kiya taaki fit aaye */
+        padding: 5px;
+    }
 
- /* Subheadings */
- h2 {
-     color: #1e3a5f;
-     /* Deep Blue */
-     font-size: 1.8rem;
-     margin-top: 40px;
-     margin-bottom: 20px;
-     border-left: 4px solid #c0392b;
-     /* Red accent border */
-     padding-left: 15px;
- }
+    .bt {
+        padding: 8px 15px !important; /* Login buttons chote kiye */
+        font-size: 12px !important;
+    }
 
- /* Data Table */
- .data-table {
-     width: 100%;
-     border-collapse: collapse;
-     margin: 30px 0;
-     font-size: 1rem;
- }
+    /* --- 3. HERO SECTION FIX --- */
+    .hero-section {
+        height: auto !important;
+        min-height: 600px; /* Mobile par height adjust ki */
+        background-position: center center !important;
+    }
 
- .data-table th {
-     background-color: #1e3a5f;
-     /* Deep Blue table head */
-     color: #ffffff;
-     text-align: left;
-     padding: 12px 15px;
- }
+    .hero {
+        margin-left: 0 !important;
+        margin-top: 60px !important;
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
- .data-table td {
-     border: 1px solid #e0e0e0;
-     padding: 12px 15px;
- }
+    .hero h1 {
+        font-size: 2.5rem !important; /* Heading adjust ki */
+        line-height: 1.2;
+    }
 
- .data-table tr:nth-child(even) {
-     background-color: #f9f9f9;
- }
-
- .positive-change {
-     color: #28a745;
-     /* Green text for gains */
-     font-weight: bold;
- }
-
- /* Blockquote */
- blockquote {
-     font-style: italic;
-     font-size: 1.4rem;
-     color: #555555;
-     text-align: center;
-     margin: 40px 20px;
-     position: relative;
- }
+    /* "Stay informed..." text fix */
+    .hero p {
+        font-size: 14px !important;
+        width: 90% !important;
+        max-width: 400px !important;
+        margin: 10px auto 20px auto !important;
+        border-left: none !important; /* Side border hataya */
+        background: rgba(0, 0, 0, 0.5) !important;
+        padding: 15px !important;
+        border-radius: 10px;
+    }
 
 
- /* Footer */
- .article-footer {
-     margin-top: 50px;
-     padding-top: 20px;
-     border-top: 1px solid #e0e0e0;
-     text-align: center;
- }
+    /* Main Content Fix (Jo cut raha tha) */
+    .container {
+        width: 95%; /* Screen ka 95% use karega */
+        margin: 20px auto;
+        padding: 20px; /* Padding kam ki taake content ke liye jagah bache */
+    }
 
- .back-btn {
-     background-color: #1e3a5f;
-     /* Deep Blue Button */
-     color: #ffffff;
-     padding: 12px 30px;
-     text-decoration: none;
-     border-radius: 5px;
-     font-weight: bold;
-     transition: background 0.3s;
- }
+    .article-body p {
+        text-align: left; /* Justify se gaps aate hain, left align behtar hai */
+    }
 
- .back-btn:hover {
-     background-color: #152a45;
-     /* Darker Blue on hover */
- }
+    /* Footer Fix */
+    .footer-flex {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  /* Footer */
- footer {
-       background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-     color: white;
-     padding: 3rem 0 1rem 0;
-     border-radius: 30px;
-     margin-top: 3rem;
- }
-
- .footer-container {
-     max-width: 1200px;
-     margin: 0 auto;
-     padding: 0 20px;
- }
-
- .footer-flex {
-     display: flex;
-     align-items: flex-start;
-     gap: 2rem;
-     margin-bottom: 2rem;
- }
-  .footer-section{
-    margin-right: 80px;
-  }
-
- .footer-section h3 {
-     margin-bottom: 1rem;
-     color: #ffd700;
- }
-
- .footer-section ul {
-     list-style: none;
- }
-
- .footer-section ul li {
-     margin-bottom: 0.5rem;
- }
-
- .footer-section a {
-     color: white;
-     text-decoration: none;
-     opacity: 0.9;
-     transition: opacity 0.3s;
- }
-
- .footer-section a:hover {
-     opacity: 1;
-     color: #ffd700;
- }
-
- .footer-bottom {
-     text-align: center;
-     padding-top: 2rem;
-     border-top: 1px solid rgba(255, 255, 255, 0.1);
-     opacity: 0.8;
- }
-
-
- /* --- MOBILE RESPONSIVENESS --- */
- @media (max-width: 768px) {
-     .container {
-         padding: 25px;
-         margin: 20px;
-     }
-
-     h1 {
-         font-size: 2rem;
-     }
- }
+    .footer-section {
+        margin-right: 0;
+    }
+}

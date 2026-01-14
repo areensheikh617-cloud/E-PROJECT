@@ -61,35 +61,23 @@ body {
 .nav-links a:hover {
     color: white;
 }
-.bt {
-     padding: 10px 30px ;
-     font-size: 16px;
-     border-radius: 5px;
-     cursor: pointer;
-     transition: 0.3s;
-     font-weight: bold;
+
+ #btn {
+     color: white;
+     background-color: #203a43;
+     box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.15);
+     border-radius: 10px;
+     padding: 10px 10px;
+     border-color: #e0e0e0;
+     margin-bottom: 20px;
  }
 
-
- .btn-login {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-login:hover {
-     background-color: grey;
- }
-
-
- .btn-signup {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-signup:hover {
-     background-color:gray;
+ #btn:hover {
+     transition-property: all;
+     transition-timing-function: linear;
+     transition-duration: 0.1s;
+     color: black;
+     background-color: white;
  }
 
 /* Active Link (Golden Underline) */
@@ -236,9 +224,9 @@ body {
 
 /* News Grid */
 .news-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -246,6 +234,7 @@ body {
 .news-card {
     background: white;
     border-radius: 8px;
+    width: 100%;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -477,14 +466,63 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     opacity: 0.8;
 }
-.business-stories {
+/* 1. Main Container */
+.business-stories-container {
     background-color: white;
     padding: 30px;
-    border-radius: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* 2. Heading */
+.stories-header {
+    color: #1e3c72;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* 3. GRID SYSTEM (Desktop) */
+.stories-grid {
+    display: grid;
+    /* Desktop par 4 barabar columns banenge */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Beech mein gap */
+    align-items: start; /* Content upar se align rahega */
+}
+
+/* 4. Card Styling */
+.story-card {
+    padding-right: 15px;
+    /* Side wali neeli line */
+    border-right: 2px solid #1e3c72; 
+    height: 100%; /* Height barabar rakhega */
+}
+
+/* HTML mein jo 'no-border' class di thi, wo yahan kaam karegi */
+.no-border {
+    border-right: none !important;
+    border-bottom: none !important;
+}
+
+.story-card h4 {
+    color: #1e3c72;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.story-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
 }
 
 /* =======================================================
-   RESPONSIVE MEDIA QUERIES (Business Page)
+   RESPONSIVE DESIGN (FIXED & OPTIMIZED)
    ======================================================= */
 
 /* --- Tablet View (Max Width: 1024px) --- */
@@ -496,11 +534,12 @@ footer {
 
     /* News Grid: 3 ki jagah 2 columns tablet par */
     .news-grid {
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
     }
     
-    /* Stats ko wrap hone do agar jagah kam ho */
+    /* Stats adjust */
     .stats-flex {
         flex-wrap: wrap;
         justify-content: center;
@@ -510,13 +549,19 @@ footer {
 /* --- Mobile View (Max Width: 768px) --- */
 @media screen and (max-width: 768px) {
 
-
-    .container {
-        width: 100%;
-        padding: 0 15px;
+    /* 1. GLOBAL FIXES */
+    body {
+        background-attachment: scroll; /* Mobile par fixed background glitch karta hai */
     }
 
-    /* --- 2. HEADER & NAVBAR FIX --- */
+    .container {
+        width: 100% !important;
+        padding: 0 15px !important;
+        margin: 0 auto !important;
+        overflow-x: hidden;
+    }
+
+     /* --- 2. HEADER & NAVBAR FIX --- */
     .navbar {
         padding: 15px 0 !important;
         height: auto;
@@ -573,139 +618,82 @@ footer {
         padding: 15px !important;
         border-radius: 10px;
     }
-   
-    /* 6. MARKET OVERVIEW GRID */
-    .market-stats {
-        grid-template-columns: 1fr; /* 1 Column on mobile */
-    }
-
-     /* 1. CONTAINER FIX */
-    .container {
-        width: 90% !important; /* Side mein thodi jagah chodein */
-        margin: 0 auto !important;
-        padding: 0 10px !important;
-        overflow-x: hidden; /* Horizontal scroll rokein */
-    }
-
-    /* 2. IMAGE FIX (Sabse Important) */
-    .featured-image img {
-        width: 100% !important; /* 550px ko overwrite karega */
-        height: auto !important; /* Aspect ratio maintain karega */
-        border-radius: 8px;
-    }
     
-    .news-image {
-        height: 200px !important; /* News images ki height fix */
-        width: 100% !important;
-    }
-
-    /* 3. GRID & LAYOUT FIXES (1 Column karo) */
-    /* Jo blue columns pichak rahe thay, unhe ek ke niche ek layega */
-    .news-grid, 
+    /* Market Stats, News Grid, Featured Content -> Sab Column ban jayenge */
     .market-stats, 
-    .featured-content {
+    .news-grid, 
+    .featured-content,
+    .stats-flex {
         display: flex !important;
         flex-direction: column !important;
         gap: 30px !important;
     }
 
-
-    /* 6. STATS FIX */
-    .stats-flex {
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-    
-    .stat-item {
-        width: 100% !important;
-        margin-bottom: 20px !important;
-    }
-
-    /* 7. Footer alignment */
-    .footer-flex {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .footer-section {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-}
-/* =======================================================
-   BUSINESS PAGE RESPONSIVE FIX (Mobile & Tablet)
-   ======================================================= */
-
-@media screen and (max-width: 768px) {
-
-    /* 1. CONTAINER FIX */
-    .container {
-        width: 90% !important; /* Side mein thodi jagah chodein */
-        margin: 0 auto !important;
-        padding: 0 10px !important;
-        overflow-x: hidden; /* Horizontal scroll rokein */
-    }
-
-    /* 2. IMAGE FIX (Sabse Important) */
+    /* 5. IMAGE FIXES (Crucial) */
+    /* Overwriting hardcoded pixel widths */
     .featured-image img {
-        width: 100% !important; /* 550px ko overwrite karega */
-        height: auto !important; /* Aspect ratio maintain karega */
-        border-radius: 8px;
+        width: 100% !important;
+        height: auto !important;
+        max-height: 300px; /* Zyada lamba na ho */
+        object-fit: cover;
     }
-    
+
     .news-image {
-        height: 200px !important; /* News images ki height fix */
         width: 100% !important;
+        height: 200px !important;
     }
 
-    /* 3. GRID & LAYOUT FIXES (1 Column karo) */
-    /* Jo blue columns pichak rahe thay, unhe ek ke niche ek layega */
-    .news-grid, 
-    .market-stats, 
-    .featured-content {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important;
-    }
-
-
-    /* 6. STATS FIX */
-    .stats-flex {
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-    
-    .stat-item {
-        width: 100% !important;
-        margin-bottom: 20px !important;
-    }
-
-    /* 7. Footer alignment */
-    .footer-flex {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .footer-section {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    .business-stories {
-        /* Desktop par ye Flex tha, ab Mobile par Grid ban jayega */
-        display: grid !important; 
-        
-        /* Mobile layout styling */
-        grid-template-columns: 1fr !important; /* 1 Column (Ek ke niche ek) */
-        /* Agar aap mobile par 2 columns chahte hain toh '1fr' ki jagah '1fr 1fr' likhein */
-        
-        gap: 20px !important; /* Items ke beech gap */
-        width: 100% !important;
-        margin-top: 20px;
-    }
-
-    /* Agar columns ke andar padding issue ho */
-    .business-stories div {
+    /* 6. STAT CARDS & ITEMS */
+    .stat-card, .stat-item {
         width: 100% !important;
         margin: 0 !important;
+    }
+
+    /* 7. FOOTER FIXES */
+    .footer-flex {
+        flex-direction: column !important; /* Row nahi, Column! */
+        align-items: center !important;
+        text-align: center !important;
+        gap: 40px;
+    }
+
+    .footer-section {
+        margin-right: 0 !important;
+        width: 100%;
+    }
+
+   .stories-grid {
+        /* Mobile par 1 column (ek ke neeche ek) */
+        grid-template-columns: 1fr; 
+        gap: 30px; /* Thoda zyada gap mobile ke liye */
+    }
+
+    .story-card {
+        border-right: none; /* Side border hatao */
+        border-bottom: 1px solid #ddd; /* Neeche gray border lagao */
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    /* Last wale ki neeche wali line hatane ke liye wahi class use hogi */
+    .no-border {
+        border-bottom: none !important;
+    }
+}
+
+/* --- Small Phones (Max Width: 480px) --- */
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem !important;
+    }
+    
+    .page-title h1 {
+        font-size: 2rem !important;
+    }
+
+    .btn {
+        width: 100%;
+        display: block;
+        text-align: center;
     }
 }

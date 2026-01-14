@@ -9,24 +9,24 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-      background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
+    background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-/* Header Styles */
+/* =========================================
+   HEADER & HERO SECTION
+   ========================================= */
 .hero-section {
-    /* Background Image setup */
-    background:linear-gradient( to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
     url('./CONTENT/contact-dnbc.png');
     background-size: cover;
     background-position: center;
     height: 750px;
     position: relative;
     border-radius: 0 0 20px 20px;
-
 }
 
 .navbar {
@@ -43,7 +43,6 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-
 }
 
 .nav-links a {
@@ -61,114 +60,123 @@ body {
 .nav-links a:hover {
     color: white;
 }
-.bt {
-     padding: 10px 30px ;
-     font-size: 16px;
-     border-radius: 5px;
-     cursor: pointer;
-     transition: 0.3s;
-     font-weight: bold;
- }
 
-
- .btn-login {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-login:hover {
-     background-color: grey;
- }
-
-
- .btn-signup {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-signup:hover {
-     background-color:gray;
- }
-
-/* Active Link (Golden Underline) */
 .nav-links a.active {
     color: white;
     border-bottom: 3px solid #c5a065;
 }
 
-  .hero {
-     padding: 0 5%;
-     margin-top: 150px;
-     margin-left: 80px;
- }
+/* Buttons */
+.bt {
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    color: white;
+    border: none;
+}
 
- /* The Pro Gradient Overlay */
+.btn-login {
+    background-color: maroon;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+}
 
- .hero-content {
-     max-width: 650px;
-     color: white;
- }
+.btn-login:hover {
+    background-color: grey;
+}
 
- .hero h1 {
-     font-family: 'Oswald', sans-serif;
-     font-size: 5.3rem;
-     line-height: 1.1;
-     margin-bottom: 20px;
-     text-transform: uppercase;
-     color: rgb(213, 213, 213);
- }
+.btn-signup {
+    background-color: maroon;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+}
 
- .hero p {
-     font-size: 1.2rem;
-     margin-bottom: 30px;
-     border-left: 4px solid #cc0000;
-     /* Stylish accent line */
-     padding-left: 15px;
-     padding: 10px ;
-     background: rgba(0, 0, 0, 0.3);
-     /* Subtle background */
- }
+.btn-signup:hover {
+    background-color: gray;
+}
 
- .btn {
-     padding: 15px 40px;
-     background-color: white;
-     color: black;
-     text-decoration: none;
-     font-weight: bold;
-     text-transform: uppercase;
-     transition: 0.3s;
- }
+/* Hero Content */
+.hero {
+    padding: 0 5%;
+    margin-top: 150px;
+    margin-left: 80px;
+}
 
- .btn:hover {
-     background-color: #cc0000;
-     color: white;
- }
+.hero-content {
+    max-width: 650px;
+    color: white;
+}
 
-/* page header */
+.hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5.3rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: rgb(213, 213, 213);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    border-left: 4px solid #cc0000;
+    padding-left: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+    padding: 15px 40px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+/* =========================================
+   MAIN CONTAINER & CONTACT SECTION
+   ========================================= */
 .container {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 20px;
 }
 
+/* Flex Layout Fix: Wrap aur center add kiya */
 .contact-flex {
     display: flex;
-    justify-content: flex-start;
-    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
     margin-bottom: 3rem;
+    flex-wrap: wrap; /* Important for responsiveness */
 }
 
-.contact-info {
+/* Contact Info & Form Fix: Fixed width (700px) hata kar Flex use kiya */
+.contact-info, 
+.contact-form {
     background: white;
     padding: 2.5rem;
-    width: 700px;
+    flex: 1; /* Equal width */
+    min-width: 300px; /* Minimum width so it doesn't get too small */
+    width: 100%;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.contact-info h2 {
+.contact-info h2, 
+.contact-form h2 {
     color: #1e3c72;
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -189,7 +197,6 @@ body {
 .info-icon {
     font-size: 2rem;
     margin-right: 1rem;
-
 }
 
 .info-content h3 {
@@ -202,22 +209,7 @@ body {
     line-height: 1.6;
 }
 
-.contact-form {
-    background: white;
-    padding: 2.5rem;
-    width: 700px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form h2 {
-    color: #1e3c72;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid #1e3c72;
-}
-
+/* Form Styling */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -238,7 +230,6 @@ body {
     border-radius: 5px;
     font-size: 1rem;
     font-family: inherit;
-    /* transition: border-color 0.3s; */
 }
 
 .form-group input:focus,
@@ -262,13 +253,16 @@ body {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-
+    width: 100%; /* Mobile friendly */
 }
 
 .submit-btn:hover {
     background: #667eea;
 }
 
+/* =========================================
+   OFFICES SECTION
+   ========================================= */
 .offices-section {
     background: white;
     padding: 2.5rem;
@@ -286,8 +280,7 @@ body {
 
 .offices-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns Default */
     gap: 2rem;
 }
 
@@ -318,7 +311,9 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* --- Map Section Styles (FIXED) --- */
+/* =========================================
+   MAP SECTION
+   ========================================= */
 .map-container h2 {
     color: #1e3c72;
     font-size: 2rem;
@@ -330,16 +325,14 @@ body {
     text-transform: uppercase;
 }
 
-/* Yeh wrapper map ki height ko control karega */
 .map-frame-wrapper {
     width: 100%;
-    height: 450px; /* Fixed height set ki hai taake extra space na bane */
+    height: 450px;
     overflow: hidden;
     position: relative;
     border-radius: 10px;
 }
 
-/* Iframe ab wrapper ki poori height lega */
 .map-frame {
     width: 100%;
     height: 100%;
@@ -347,7 +340,9 @@ body {
     display: block;
 }
 
-
+/* =========================================
+   SOCIAL & FOOTER
+   ========================================= */
 .social-media {
     background: white;
     padding: 2.5rem;
@@ -383,8 +378,6 @@ body {
     transition: transform 0.3s;
 }
 
-
-/* Footer */
 footer {
     background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
     color: white;
@@ -408,6 +401,7 @@ footer {
 
 .footer-section {
     margin-right: 80px;
+    flex: 1;
 }
 
 .footer-section h3 {
@@ -442,12 +436,41 @@ footer {
     opacity: 0.8;
 }
 
+/* =======================================================
+   RESPONSIVE DESIGN (OPTIMIZED)
+   ======================================================= */
 
-@media (max-width: 768px) {
+/* --- Tablet View (Max Width: 1024px) --- */
+@media screen and (max-width: 1024px) {
     .container {
-        width: 100%;
+        width: 95%;
         padding: 0 15px;
     }
+
+    /* Tablet: Stack Form if needed or keep side by side but smaller */
+    .contact-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Tablet: 2 Columns for Offices */
+    .offices-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .footer-section {
+        margin-right: 0;
+    }
+}
+
+/* --- Mobile View (Max Width: 768px) --- */
+@media screen and (max-width: 768px) {
 
     /* --- 2. HEADER & NAVBAR FIX --- */
     .navbar {
@@ -506,16 +529,14 @@ footer {
         padding: 15px !important;
         border-radius: 10px;
     }
-     /* 3. CONTACT FORM & INFO (Stack Vertically) */
+
+    /* 3. CONTACT FORM & INFO */
     .contact-flex {
-        flex-direction: column; /* Upar Niche */
         gap: 30px;
     }
-
+    
     .contact-info, .contact-form {
-        width: 100%; /* Full Width */
-        padding: 1.5rem; /* Padding thodi kam ki */
-        margin: 0;
+        padding: 1.5rem !important;
     }
 
     .contact-info h2, .contact-form h2 {
@@ -524,41 +545,23 @@ footer {
 
     /* 4. OFFICES GRID (1 Column) */
     .offices-grid {
-        grid-template-columns: 1fr; /* Ek ke niche ek */
-        gap: 20px;
-    }
-
-    .office-card {
-        width: 100%;
+        grid-template-columns: 1fr !important;
     }
 
     /* 5. FOOTER FIX */
     .footer-flex {
-        flex-direction: column;
-        gap: 30px;
+        flex-direction: column !important;
         text-align: center;
+        gap: 40px;
     }
 
     .footer-section {
-        margin-right: 0;
+        margin-right: 0 !important;
         width: 100%;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .container {
-        width: 95%;
-        margin: 2rem auto;
-    }
-    
-    /* Contact Form & Info ko Tablet par bhi adjust karein */
-    .contact-info, .contact-form {
-        width: 100%; /* Fixed 700px hataya */
+        padding: 0 20px;
     }
 
-    .offices-grid {
-        grid-template-columns: 1fr 1fr; /* 3 ki jagah 2 columns */
-        gap: 20px;
+    .social-icons {
+        gap: 1rem;
     }
-
 }

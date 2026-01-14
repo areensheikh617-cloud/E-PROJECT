@@ -4,37 +4,33 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-    color: rgb(228, 82, 130);
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    /* background-color: #f4f4f4; */
     background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    min-height: 100vh; /* Ensure full height */
 }
 
-/* Header Styles */
-.hero-section {
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    border-radius: 0 0 20px 20px;
+a {
+    text-decoration: none;
+    transition: 0.3s;
 }
 
+/* =========================================
+   HEADER & NAVBAR
+   ========================================= */
 .navbar {
     width: 100%;
-    padding: 40px 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 30px;
+    padding: 20px 0; /* Padding adjust ki */
+    background-color: rgba(0, 0, 0, 0.7); /* Thoda dark kiya better readability ke liye */
+    border-radius: 0 0 30px 30px; /* Sirf niche curve achha lagta hai */
     border-bottom: 1px solid red;
+    margin-bottom: 20px;
 }
 
 .nav-links {
@@ -46,64 +42,69 @@ body {
 }
 
 .nav-links a {
-    text-decoration: none;
     color: #e0e0e0;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
-    padding-bottom: 10px;
-    transition: 0.3s;
+    padding-bottom: 5px;
 }
 
 .nav-links a:hover {
     color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
-/* Active Link (Golden Underline) */
+/* Active Link */
 .nav-links a.active {
     color: white;
     border-bottom: 3px solid #c5a065;
 }
 
-/* signup Card Styling */
+/* =========================================
+   LOGIN CONTAINER & CARD
+   ========================================= */
 .container-login {
-    margin-top: 40px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
+    min-height: 80vh; /* Screen ke beech mein lane ke liye */
+    padding: 20px;
 }
 
 .login-card {
     background: white;
-    padding: 30px 30px;
+    padding: 40px;
     width: 100%;
-    max-width: 450px;
+    max-width: 450px; /* Maximum width fixed */
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     text-align: left;
     border: 1px solid rgba(255, 255, 255, 0.8);
-
+    position: relative;
+    overflow: hidden;
 }
 
+/* Heading Styling */
 .login-card h2 {
     text-align: center;
     font-family: 'Playfair Display', serif;
     color: #1a4a3b;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
+/* Form Fields */
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 600;
     color: #4a5550;
     font-size: 13px;
     letter-spacing: 0.5px;
@@ -113,10 +114,10 @@ body {
 .form-group input {
     width: 100%;
     padding: 14px 18px;
-    border: 1px solid #e0e0e0;
+    border: 2px solid #e0e0e0;
     background-color: #f9fbfb;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 15px;
     color: #333;
     outline: none;
     transition: all 0.3s ease;
@@ -128,6 +129,7 @@ body {
     box-shadow: 0 0 0 4px rgba(26, 74, 59, 0.1);
 }
 
+/* Login Button */
 .btn-login {
     width: 100%;
     padding: 15px;
@@ -140,47 +142,81 @@ body {
     cursor: pointer;
     transition: transform 0.2s, background-color 0.3s;
     margin-top: 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: inherit;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .btn-login:hover {
     background-color: #143d30;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(26, 74, 59, 0.2);
+    box-shadow: 0 5px 15px rgba(26, 74, 59, 0.3);
 }
 
+/* Sign Up Link */
 .sign-link {
     text-align: center;
     margin-top: 25px;
-    padding-top: 15px;
+    padding-top: 20px;
     border-top: 1px solid #eee;
     font-size: 14px;
     color: #666;
 }
 
 .sign-link a {
-    color: #1a4a3b;
-    text-decoration: none;
+    color: #1a4a3b; /* RGB Pink hata kar Theme color lagaya */
     font-weight: 700;
-    transition: color 0.2s;
+    text-decoration: none;
 }
 
-.signup-link a:hover {
+.sign-link a:hover {
     color: #0f2e24;
     text-decoration: underline;
 }
 
-@media (max-width: 600px) {
-    header {
-        padding: 15px 20px;
+/* =========================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================= */
+
+@media (max-width: 768px) {
+    
+    /* --- 2. HEADER & NAVBAR FIX --- */
+    .navbar {
+        padding: 15px 0 !important;
+        height: auto;
     }
 
-    nav {
-        display: none;
+    .nav-links {
+        flex-direction: row !important; /* Links side-by-side */
+        justify-content: center !important;
+        flex-wrap: wrap !important; /* Agar jagah kam ho to wrap kare */
+        gap: 10px !important;
+        padding: 0 10px;
+    }
+
+    .nav-links a {
+        font-size: 13px !important; /* Font chhota kiya taaki fit aaye */
+        padding: 5px;
+    }
+
+    /* 2. LOGIN CARD FIX */
+    .container-login {
+        padding: 15px;
+        min-height: 70vh; /* Height adjust */
+        margin-top: 20px;
     }
 
     .login-card {
-        padding: 30px 20px;
+        padding: 25px 20px; /* Mobile par padding kam ki */
+        max-width: 100%; /* Full width */
+    }
+
+    .login-card h2 {
+        font-size: 26px; /* Heading thodi choti */
+        margin-bottom: 20px;
+    }
+
+    .form-group input {
+        padding: 12px 15px; /* Input comfortable banaye */
     }
 }

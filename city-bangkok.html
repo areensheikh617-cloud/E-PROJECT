@@ -6,106 +6,135 @@
     <title>BangKok -DNBC</title>
     <link rel="stylesheet" href="./city.css">
     <style>
-        /* Header Styles */
-.hero-section {
-    /* Background Image setup */
-    background: url('./CONTENT/bangkok-w.png');
-    background-size: cover;
-    background-position: center;
-    height: 580px;
-    position: relative;
-    border-radius: 0 0 20px 20px;
+      /* === INTERNAL HEADER STYLES (RESPONSIVE FIXED) === */
+        
+        .hero-section {
+            /* Background Image setup */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./CONTENT/bangkok-w.png');
+            background-size: cover;
+            background-position: center;
+            height: 60vh; /* Viewport height use ki */
+            min-height: 500px;
+            position: relative;
+            border-radius: 0 0 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center Horizontal */
+        }
 
-}
+        .navbar {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 0 0 30px 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
 
-.navbar {
-    width: 100%;
-    padding: 25px 0;
-    padding: 50px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 0 0 30px 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.0);
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Mobile pe links wrap honge */
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-size: 16px; /* Thoda chota kiya taake fit aye */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 5px;
+            transition: 0.3s;
+        }
 
-}
+        .nav-links a:hover {
+            color: white;
+        }
 
-.nav-links a {
-    text-decoration: none;
-    color: #e0e0e0;
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    padding-bottom: 10px;
-    transition: 0.3s;
-}
+        .nav-links a.active {
+            color: white;
+            border-bottom: 3px solid #c5a065;
+        }
 
-.nav-links a:hover {
-    color: white;
-}
+        /* Hero Content Styling - Flexbox Centering */
+        .hero-content {
+            text-align: center;
+            color: white;
+            margin-top: auto;
+            margin-bottom: auto; /* Absolute center */
+            padding: 0 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* Active Link (Golden Underline) */
-.nav-links a.active {
-    color: white;
-    border-bottom: 3px solid #c5a065;
-}
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 4rem); /* Responsive Font Size */
+            font-weight: 900;
+            color: #f0f0f0;
+            font-family: Georgia, serif;
+            letter-spacing: 1px;
+            
+            /* Box Styling */
+            border: 3px solid maroon;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            width: 100%;
+            text-transform: uppercase;
+        }
 
-/* Hero Content (Center Text) */
-.hero-content {
-    text-align: center;
-    color: white;
-    margin-top: 80px;
-    margin-bottom: auto;
-    padding: 0 20px;
+        .hero-content p {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 400;
+            font-family: Georgia, serif;
+            text-transform: capitalize;
+            color: #f0f0f0;
+            
+            /* Box Styling */
+            border: 3px solid maroon;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            
+            padding: 10px 20px;
+            max-width: 600px;
+            width: 100%;
+        }
 
-}
-
-.hero-content h1 {
-    font-size: 50px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    color: #f0f0f0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 900;
-    letter-spacing: 1px;
-    margin-left: 430px;
-    border-color: maroon;
-    border-radius: 20px;
-    border-style: solid;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 750px;
-    text-transform: uppercase;
-}
-
-
-.hero-content p {
-    font-size: 22px;
-    font-weight: 400;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-transform: capitalize;
-    margin: 0 auto;
-    margin-left: 500px;
-    color: #f0f0f0;
-    border-color: maroon;
-    border-radius: 20px;
-    border-style: solid;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    width: 600px;
-}
+        /* Mobile Adjustments for Header */
+        @media (max-width: 768px) {
+            .navbar {
+                position: relative; /* Mobile pe normal flow mai aa jaye */
+                border-radius: 0;
+            }
+            .hero-section {
+                height: auto;
+                padding-bottom: 40px;
+            }
+            .nav-links {
+                gap: 15px;
+            }
+            .nav-links a {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
     
+    <script src="./jquery-3.7.1.js"></script>
      <!-- Header -->
       <header class="hero-section">
         <nav class="navbar">
@@ -169,7 +198,9 @@
                     <span class="card-category">🚤 Smart Mobility</span>
                     <h3 class="card-title">Electric Ferries & Smart Piers</h3>
                     <p class="card-excerpt">
-                        Bangkok has modernized its famous river transport: <br>
+                        Bangkok has modernized its famous river transport: <br></p>
+                            <button class="hide1" id="btn">Read More..</button>
+                         <p  class="show1">
                         1. <strong>E-Boats:</strong> Fleet of air-conditioned, aluminum electric boats on Chao Phraya.<br>
                         2. <strong>Smart Piers:</strong> Digital screens showing real-time boat arrival times.<br>
                         3. <strong>Cashless Ticketing:</strong> Payment via Rabbit Card or banking apps.<br>
@@ -188,7 +219,9 @@
                     <span class="card-category">📡 5G Connectivity</span>
                     <h3 class="card-title">ASEAN's 5G Leader</h3>
                     <p class="card-excerpt">
-                        Bangkok was one of the first cities in SE Asia to launch 5G: <br>
+                        Bangkok was one of the first cities in SE Asia to launch 5G: <br></p>
+                            <button class="hide2" id="btn">Read More..</button>
+                         <p  class="show2">
                         1. <strong>Bang Sue Grand Station:</strong> The largest station in ASEAN is a 5G smart hub.<br>
                         2. <strong>Smart Hospitals:</strong> Siriraj Hospital uses 5G for AI diagnosis and cloud data.<br>
                         3. <strong>Coverage:</strong> 99% of Bangkok is covered by high-speed 5G networks.<br>
@@ -207,7 +240,9 @@
                     <span class="card-category">💸 FinTech & Payments</span>
                     <h3 class="card-title">PromptPay & Cashless Society</h3>
                     <p class="card-excerpt">
-                        Thailand has one of the world's best real-time payment systems: <br>
+                        Thailand has one of the world's best real-time payment systems: <br></p>
+                            <button class="hide3" id="btn">Read More..</button>
+                         <p  class="show3">
                         1. <strong>PromptPay:</strong> Transfer money instantly using just a phone number.<br>
                         2. <strong>QR Code Standard:</strong> Pay street food vendors or malls via a single QR code.<br>
                         3. <strong>Cross-Border:</strong> QR payments now work in Singapore, Japan, and Vietnam.<br>
@@ -229,7 +264,9 @@
                     <span class="card-category">🏥 Medical Tech</span>
                     <h3 class="card-title">Asia's Medical Tourism Hub</h3>
                     <p class="card-excerpt">
-                        Bangkok hospitals are technologically superior: <br>
+                        Bangkok hospitals are technologically superior: <br></p>
+                            <button class="hide4" id="btn">Read More..</button>
+                         <p  class="show4">
                         1. <strong>Robotic Surgery:</strong> Da Vinci robots performing complex surgeries.<br>
                         2. <strong>AI Diagnosis:</strong> Using AI to detect lung cancer and diabetes early.<br>
                         3. <strong>Telemedicine:</strong> 'Doctor A to Z' apps for remote consultations.<br>
@@ -248,7 +285,9 @@
                     <span class="card-category">🌳 Green Smart City</span>
                     <h3 class="card-title">Green Bangkok 2030</h3>
                     <p class="card-excerpt">
-                        Transforming the concrete jungle into a green city: <br>
+                        Transforming the concrete jungle into a green city: <br></p>
+                            <button class="hide5" id="btn">Read More..</button>
+                         <p  class="show5">
                         1. <strong>Benjakitti Forest Park:</strong> A massive wetland park treating water naturally.<br>
                         2. <strong>Electric Tuk-Tuks:</strong> Replacing noisy gas Tuk-Tuks with 'MuvMi' EVs.<br>
                         3. <strong>Dust Sensors:</strong> IoT sensors monitoring PM2.5 air quality citywide.<br>
@@ -268,6 +307,9 @@
                     <h3 class="card-title">True Digital Park</h3>
                     <p class="card-excerpt">
                         Southeast Asia's largest tech and startup campus: <br>
+                        </p>
+                            <button class="hide6" id="btn">Read More..</button>
+                         <p  class="show6">
                         1. <strong>Startup Ecosystem:</strong> A hub for Google, Huawei, and local startups.<br>
                         2. <strong>Work-Live-Play:</strong> Offices, condos, and malls integrated with smart tech.<br>
                         3. <strong>Digital Nomads:</strong> Top destination for remote workers globally.<br>
@@ -444,5 +486,40 @@
         </div>
     </footer>
 
+       <script>
+              $(".hide1").click(function () {
+                $(".show1").slideToggle()
+            })
+            $(".show1").hide()
+             
+            
+            $(".hide2").click(function () {
+                $(".show2").slideToggle()
+            })
+            $(".show2").hide()
+
+               $(".hide3").click(function () {
+                $(".show3").slideToggle()
+            })
+            $(".show3").hide()
+
+
+            $(".hide4").click(function () {
+                $(".show4").slideToggle()
+            })
+            $(".show4").hide()
+
+
+            $(".hide5").click(function () {
+                $(".show5").slideToggle()
+            })
+            $(".show5").hide()
+
+
+            $(".hide6").click(function () {
+                $(".show6").slideToggle()
+            })
+            $(".show6").hide()
+        </script>
 </body>
 </html>

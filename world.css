@@ -372,10 +372,92 @@ footer {
 }
 
 /* Responsive Design */
-@media screen  and (max-width: 990px) {
+/* =========================================
+   RESPONSIVE DESIGN (FIXED)
+   ========================================= */
+
+/* Tablets & Small Laptops (Max Width: 990px) */
+@media screen and (max-width: 990px) {
     .container {
         width: 100%;
+        padding: 0 20px;
+    }
+
+    /* Navbar Fixes */
+    .navbar {
+        padding: 15px 0 !important;
+        height: auto;
+    }
+
+    .nav-links {
+        flex-direction: row !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 15px !important;
+        padding: 0 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px !important;
+        padding: 5px;
+    }
+
+    .bt {
+        padding: 8px 20px !important;
+        font-size: 13px !important;
+    }
+
+    /* Hero Section Fixes */
+    .hero-section {
+        height: auto !important; /* Fixed height hatayi */
+        min-height: 600px;       /* Content ke hisaab se badh sake */
+        background-position: center top !important;
+    }
+
+    .hero {
+        margin-left: 0 !important;
+        margin-top: 80px !important;
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem !important;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1.1rem !important;
+        width: 90% !important;
+        max-width: 500px !important;
+        margin: 15px auto 25px auto !important;
+        border-left: none !important;
+        border-bottom: 3px solid #cc0000; /* Bottom border for style */
+        background: rgba(0, 0, 0, 0.6) !important;
+        padding: 15px !important;
+        border-radius: 10px;
+    }
+
+    /* Grid Fix (3 se 2 columns) */
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mobile Devices (Max Width: 768px) */
+@media screen and (max-width: 768px) {
+    
+    /* Body Background Fix for Mobile */
+    body {
+        background-attachment: scroll; /* Mobile par fixed background glitch karta hai */
+    }
+
+    .container, .hero {
         padding: 0 15px;
+        margin: 0 auto;
     }
 
     /* --- 2. HEADER & NAVBAR FIX --- */
@@ -436,58 +518,9 @@ footer {
         border-radius: 10px;
     }
 
-     .grid {
-        grid-template-columns: 1fr 1fr; /* 3 ki jagah 2 columns */
-    }
-}
-/* Mobile Devices (Max Width: 768px) */
-@media screen and (max-width: 768px) {
-
-    .container, .hero {
-        padding: 0 15px;
-        margin: 0 auto; /* Fixed margins hata diye */
-    }
-
-    /* --- Navbar --- */
-    .navbar {
-        padding: 15px 0;
-    }
-
-    .nav-links {
-        flex-direction: column; /* Links vertical ho jayenge */
-        gap: 15px;
-        text-align: center;
-        padding: 0;
-    }
-
-    /* --- Hero Section --- */
-    .hero-section {
-        height: auto; /* Fixed height hatayi */
-        padding-bottom: 60px;
-        min-height: 80vh;
-    }
-
-    .hero {
-        margin-top: 100px; /* Top margin adjust */
-        margin-left: 15px;
-        text-align: center; /* Content center */
-    }
-
-    .hero h1 {
-        font-size: 2.8rem; /* Mobile font size */
-        line-height: 1.2;
-    }
-
-    .hero p {
-        border-left: none; /* Border hata kar bottom border de sakte hain styling ke liye */
-        border-bottom: 4px solid #cc0000;
-        padding-left: 0;
-        padding-bottom: 10px;
-    }
-
-    /* --- Featured News Section --- */
+    /* Featured News Stack */
     .featured-news {
-        flex-direction: column; /* Side-by-side se hatakar upar-niche */
+        flex-direction: column;
         gap: 30px;
     }
 
@@ -496,42 +529,50 @@ footer {
         height: 200px;
     }
 
-    /* --- Grids (Cards) --- */
+    /* Sabhi Grids ko 1 Column karna */
     .grid, .grid2 {
-        grid-template-columns: 1fr; /* Sab kuch 1 column mein (Vertical stack) */
-        gap: 25px;
+        grid-template-columns: 1fr; 
+        gap: 30px;
     }
 
-    /* --- Footer --- */
+    /* --- FOOTER FIX (Yeh sabse important tha) --- */
     .footer-flex {
-        flex-direction: column; /* Footer columns stack honge */
-        gap: 30px;
+        flex-direction: column; /* Row nahi, Column hona chahiye stacking ke liye */
+        align-items: center;    /* Center align */
         text-align: center;
+        gap: 40px;
     }
 
     .footer-section {
-        margin-right: 0; /* Fixed right margin hataya */
+        margin-right: 0;
         width: 100%;
+        padding: 0 10px;
     }
 
     .social-links {
-        justify-content: center; /* Icons center mein */
+        justify-content: center;
     }
 }
 
 /* Small Phones (Max Width: 480px) */
 @media screen and (max-width: 480px) {
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem !important;
     }
     
+    /* Buttons ko full width karna */
     .btn {
-        width: 100%; /* Button full width */
+        width: 100%;
         display: block;
         text-align: center;
+        margin-bottom: 10px;
     }
     
     .card-image {
-        height: 180px; /* Image height thodi kam */
+        height: 180px;
+    }
+
+    .navbar {
+        padding: 10px 0;
     }
 }

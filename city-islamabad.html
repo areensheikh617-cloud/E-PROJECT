@@ -3,110 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamabad -DNBC</title>
-   <link rel="stylesheet" href="./city.css">
-   <style>
-        /* Header Styles */
-.hero-section {
-    /* Background Image setup */
-    background: url('./CONTENT/islamabad.png');
-    background-size: cover;
-    background-position: center;
-    height: 580px;
-    position: relative;
-    border-radius: 0 0 20px 20px;
+    <title>Islamabad - DNBC</title>
+    <link rel="stylesheet" href="./city.css">
+    
+    <style>
+        /* === INTERNAL HEADER STYLES (RESPONSIVE FIXED) === */
+        
+        .hero-section {
+            /* Background Image setup */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./CONTENT/islamabad.png');
+            background-size: cover;
+            background-position: center;
+            height: 60vh; /* Viewport height use ki */
+            min-height: 500px;
+            position: relative;
+            border-radius: 0 0 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center Horizontal */
+        }
 
-}
+        .navbar {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 0 0 30px 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
 
-.navbar {
-    width: 100%;
-    padding: 25px 0;
-    padding: 50px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 0 0 30px 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.0);
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Mobile pe links wrap honge */
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-size: 16px; /* Thoda chota kiya taake fit aye */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 5px;
+            transition: 0.3s;
+        }
 
-}
+        .nav-links a:hover {
+            color: white;
+        }
 
-.nav-links a {
-    text-decoration: none;
-    color: #e0e0e0;
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    padding-bottom: 10px;
-    transition: 0.3s;
-}
+        .nav-links a.active {
+            color: white;
+            border-bottom: 3px solid #c5a065;
+        }
 
-.nav-links a:hover {
-    color: white;
-}
+        /* Hero Content Styling - Flexbox Centering */
+        .hero-content {
+            text-align: center;
+            color: white;
+            margin-top: auto;
+            margin-bottom: auto; /* Absolute center */
+            padding: 0 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* Active Link (Golden Underline) */
-.nav-links a.active {
-    color: white;
-    border-bottom: 3px solid #c5a065;
-}
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 4rem); /* Responsive Font Size */
+            font-weight: 900;
+            color: #f0f0f0;
+            font-family: Georgia, serif;
+            letter-spacing: 1px;
+            
+            /* Box Styling */
+            border: 3px solid maroon;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            width: 100%;
+            text-transform: uppercase;
+        }
 
-/* Hero Content (Center Text) */
-.hero-content {
-    text-align: center;
-    color: white;
-    margin-top: 80px;
-    margin-bottom: auto;
-    padding: 0 20px;
+        .hero-content p {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 400;
+            font-family: Georgia, serif;
+            text-transform: capitalize;
+            color: #f0f0f0;
+            
+            /* Box Styling */
+            border: 3px solid maroon;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            
+            padding: 10px 20px;
+            max-width: 600px;
+            width: 100%;
+        }
 
-}
-
-.hero-content h1 {
-    font-size: 50px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    color: #f0f0f0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 900;
-    letter-spacing: 1px;
-    margin-left: 400px;
-    border-color: maroon;
-    border-radius: 20px;
-    border-style: solid;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 800px;
-    text-transform: uppercase;
-}
-
-
-.hero-content p {
-    font-size: 22px;
-    font-weight: 400;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-transform: capitalize;
-    margin: 0 auto;
-    margin-left: 550px;
-    color: #f0f0f0;
-    border-color: maroon;
-    border-radius: 20px;
-    border-style: solid;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    width: 500px;
-}
+        /* Mobile Adjustments for Header */
+        @media (max-width: 768px) {
+            .navbar {
+                position: relative; /* Mobile pe normal flow mai aa jaye */
+                border-radius: 0;
+            }
+            .hero-section {
+                height: auto;
+                padding-bottom: 40px;
+            }
+            .nav-links {
+                gap: 15px;
+            }
+            .nav-links a {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
-      <header class="hero-section">
+    <script src="./jquery-3.7.1.js"></script>
+    
+    <header class="hero-section">
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="#islamabad" class="active">ISLAMABAD</a></li>
@@ -119,22 +149,21 @@
         </nav>
 
         <div class="hero-content">
-               <h1>🇵🇰 Islamabad, Pakistan</h1>
+            <h1>🇵🇰 Islamabad, Pakistan</h1>
             <p>Capital City | Modern & Green</p>
         </div>
     </header>
   
-
     <section class="container" id="islamabad">
         <div class="flex">
             <div>
                 <div class="info-box">
                     <h2>About Islamabad</h2>
-                    <p>Islamabad is the capital city of Pakistan, known for its modern infrastructure, wide roads, and greenery. It is a planned city located at the foot of the Margalla Hills, offering a clean and organized environment compared to other major Pakistani cities.</p>
+                    <p>Islamabad is the capital city of Pakistan, known for its modern infrastructure, wide roads, and greenery. It is a planned city located at the foot of the Margalla Hills.</p>
                     <h3 style="margin-top: 1.5rem;">Key Facts</h3>
                     <div class="info-item">
                         <div class="info-icon">👥</div>
-                        <div><strong>Population:</strong> Around 1.5 million (as of 2025 estimates)</div>
+                        <div><strong>Population:</strong> Around 1.5 million (2025)</div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">🏛️</div>
@@ -142,7 +171,7 @@
                     </div>
                     <div class="info-item">
                         <div class="info-icon">💼</div>
-                        <div><strong>Education:</strong> Home to top universities like Quaid-i-Azam University and NUST</div>
+                        <div><strong>Education:</strong> Home to Quaid-i-Azam University & NUST</div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">🌊</div>
@@ -150,33 +179,40 @@
                     </div>
                 </div>
             </div>
+            
             <div class="map-container">
-               <div class="embed-map-responsive" style="height: 500px;"><div class="embed-map-container"><iframe class="embed-map-frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&height=400&hl=en&q=islamabad&t=&z=14&ie=UTF8&iwloc=B&output=embed"></iframe><a href="https://sprunkiretake.net" style="font-size:2px!important;color:gray!important;position:absolute;bottom:0;left:0;z-index:1;max-height:1px;overflow:hidden">Sprunki</a></div><style>.embed-map-responsive{position:relative;text-align:right;width:100%;height:0;padding-bottom:66.66666666666666%;}.embed-map-container{overflow:hidden;background:none!important;width:100%;height:100%;position:absolute;top:0;left:0;}.embed-map-frame{width:100%!important;height:100%!important;position:absolute;top:0;left:0;}</style></div>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212753.07823573885!2d72.92383820427847!3d33.61625093739796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd07891722f%3A0x6059515c3bdb02b6!2sIslamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2s!4v1704830000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
     <section class="container">
         <div class="section-header">
-            <span class="section-icon" style="color:black;">🇵🇰</span>
+            <span class="section-icon">🇵🇰</span>
             <h2>Islamabad Smart City & Tech Achievements</h2>
         </div>
 
         <div class="flex">
-            
             <div class="card">
                 <img src="./CONTENT/isl-card1.jpg" alt="Safe City Project" class="card-image">
                 <div class="card-content">
                     <span class="card-category">👁️ Smart Surveillance</span>
                     <h3 class="card-title">Safe City Project & AI Security</h3>
                     <p class="card-excerpt">
-                        Islamabad is the safest city in Pakistan due to AI integration: <br>
-                        1. Over 2,500 smart cameras with facial recognition installed.<br>
-                        2. Automated E-Challan system for traffic violations.<br>
-                        3. AI software detects suspicious bags or activities automatically.<br>
-                        4. 4G-connected patrol cars with live monitoring.<br>
-                        GOAL: To make Islamabad a crime-free and secure capital.
-                    </p>
+                        Islamabad is the safest city in Pakistan due to AI integration.
+                    </p> 
+                    
+                    <div class="show1">
+                        <ul style="padding-left: 20px; font-size: 0.9rem;">
+                            <li>Over 2,500 smart cameras installed.</li>
+                            <li>Automated E-Challan system.</li>
+                            <li>AI software detects suspicious activity.</li>
+                            <li>4G-connected patrol cars.</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="hide1" id="btn">Read More..</button>
+                    
                     <div class="card-meta">
                         <span>📅 Dec 20, 2025</span>
                     </div>
@@ -188,14 +224,17 @@
                 <div class="card-content">
                     <span class="card-category">🏗️ IT Infrastructure</span>
                     <h3 class="card-title">Islamabad Technopolis (STZ)</h3>
-                    <p class="card-excerpt">
-                        Government has launched a massive Special Technology Zone (STZ): <br>
-                        1. Tax-free zone for international tech companies.<br>
-                        2. High-speed fiber optic internet for all offices.<br>
-                        3. Home to global giants like Samsung and Huawei offices.<br>
-                        4. Creating 50,000+ jobs for software engineers.<br>
-                        GOAL: To turn Islamabad into the "Silicon Valley" of Pakistan.
-                    </p>
+                    <p class="card-excerpt">Government has launched a massive Special Technology Zone (STZ).</p> 
+                    
+                    <div class="show2">
+                        <ul style="padding-left: 20px; font-size: 0.9rem;">
+                            <li>Tax-free zone for intl tech companies.</li>
+                            <li>High-speed fiber optic internet.</li>
+                            <li>Offices for Samsung and Huawei.</li>
+                        </ul>
+                    </div>
+                    <button class="hide2" id="btn">Read More..</button>
+                    
                     <div class="card-meta">
                         <span>📅 Dec 19, 2025</span>
                     </div>
@@ -207,14 +246,17 @@
                 <div class="card-content">
                     <span class="card-category">🚌 Green Transport</span>
                     <h3 class="card-title">Electric Buses & Smart Metro</h3>
-                    <p class="card-excerpt">
-                        CDA has revolutionized public transport with green tech: <br>
-                        1. 160+ Electric Buses running on 13 new routes.<br>
-                        2. Zero-emission Orange Line Metro integration.<br>
-                        3. Smart Card system for cashless travel across the city.<br>
-                        4. Digital screens at stops showing real-time bus arrival.<br>
-                        GOAL: Reducing pollution and traffic congestion completely.
-                    </p>
+                    <p class="card-excerpt">CDA has revolutionized public transport with green tech.</p> 
+                    
+                     <div class="show3">
+                        <ul style="padding-left: 20px; font-size: 0.9rem;">
+                            <li>160+ Electric Buses on 13 routes.</li>
+                            <li>Zero-emission Orange Line Metro.</li>
+                            <li>Smart Card cashless travel.</li>
+                        </ul>
+                    </div>
+                    <button class="hide3" id="btn">Read More..</button>
+                    
                     <div class="card-meta">
                         <span>📅 Dec 18, 2025</span>
                     </div>
@@ -223,64 +265,59 @@
         </div>
 
         <div class="flex">
-
-            <div class="card">
+             <div class="card">
                 <img src="./CONTENT/isl-card4.jpg" alt="City App" class="card-image">
                 <div class="card-content">
                     <span class="card-category">📱 E-Government</span>
                     <h3 class="card-title">Islamabad City App Services</h3>
-                    <p class="card-excerpt">
-                        Citizens can now control civic services from their phone: <br>
-                        1. Pay property taxes and water bills online.<br>
-                        2. Get birth certificates and domicile without visiting offices.<br>
-                        3. Report garbage or street light issues via the app.<br>
-                        4. Vehicle registration and token tax payment via biometric.<br>
-                        GOAL: Paperless government and instant citizen services.
-                    </p>
-                    <div class="card-meta">
-                        <span>📅 Dec 17, 2025</span>
-                    </div>
+                    <p class="card-excerpt">Citizens can now control civic services from their phone.</p> 
+                     <div class="show4">
+                         <ul style="padding-left: 20px; font-size: 0.9rem;">
+                            <li>Pay property taxes and bills online.</li>
+                            <li>Get birth certificates digitally.</li>
+                            <li>Report street light issues via app.</li>
+                        </ul>
+                     </div>
+                    <button class="hide4" id="btn">Read More..</button>
+                    <div class="card-meta"><span>📅 Dec 17, 2025</span></div>
                 </div>
             </div>
 
-            <div class="card">
+             <div class="card">
                 <img src="./CONTENT/isl-card5.jpg" alt="Startups" class="card-image">
                 <div class="card-content">
-                    <span class="card-category">🚀 Startups & Innovation</span>
-                    <h3 class="card-title">National Incubation Center (NIC)</h3>
-                    <p class="card-excerpt">
-                        Islamabad is the hub for Pakistan's biggest startups: <br>
-                        1. Funding and mentorship for young entrepreneurs.<br>
-                        2. Focus on AI, Blockchain, and Agri-Tech solutions.<br>
-                        3. Success stories: Airlift, Bykea, and Cheetay originated here.<br>
-                        4. Free co-working spaces for freelancers and developers.<br>
-                        GOAL: Empowering youth to build billion-dollar companies.
-                    </p>
-                    <div class="card-meta">
-                        <span>📅 Dec 16, 2025</span>
-                    </div>
+                    <span class="card-category">🚀 Startups</span>
+                    <h3 class="card-title">National Incubation Center</h3>
+                    <p class="card-excerpt">Islamabad is the hub for Pakistan's biggest startups.</p> 
+                     <div class="show5">
+                         <ul style="padding-left: 20px; font-size: 0.9rem;">
+                            <li>Funding for young entrepreneurs.</li>
+                            <li>Focus on AI & Agri-Tech.</li>
+                            <li>Free co-working spaces.</li>
+                        </ul>
+                     </div>
+                    <button class="hide5" id="btn">Read More..</button>
+                    <div class="card-meta"><span>📅 Dec 16, 2025</span></div>
                 </div>
             </div>
 
             <div class="card">
                 <img src="./CONTENT/isl-card6.jpg" alt="Science Park" class="card-image">
                 <div class="card-content">
-                    <span class="card-category">🔬 Science & Research</span>
+                    <span class="card-category">🔬 Research</span>
                     <h3 class="card-title">National Science & Tech Park</h3>
-                    <p class="card-excerpt">
-                        Located at NUST, this is Pakistan's first university-based park: <br>
-                        1. Research on Drones and Robotics happening locally.<br>
-                        2. Collaboration between Turkish and Pakistani defense tech.<br>
-                        3. Advanced labs for Artificial Intelligence testing.<br>
-                        4. Producing high-tech medical devices within Pakistan.<br>
-                        GOAL: Bridging the gap between academia and industry.
-                    </p>
-                    <div class="card-meta">
-                        <span>📅 Dec 15, 2025</span>
-                    </div>
+                    <p class="card-excerpt">Located at NUST, Pakistan's first university-based park.</p> 
+                     <div class="show6">
+                        <ul style="padding-left: 20px; font-size: 0.9rem;">
+                            <li>Research on Drones and Robotics.</li>
+                            <li>Advanced AI testing labs.</li>
+                            <li>Producing high-tech medical devices.</li>
+                        </ul>
+                     </div>
+                    <button class="hide6" id="btn">Read More..</button>
+                    <div class="card-meta"><span>📅 Dec 15, 2025</span></div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -294,138 +331,78 @@
             <div class="card-1">
                 <div class="card-content">
                     <h3>Hiking & Nature Trails</h3>
-                    <p>
-                        Hiking on Trail 3 & 5, walking in Margalla Hills National Park, and sunset views at Daman-e-Koh.
-                    </p>
+                    <p>Hiking on Trail 3 & 5, walking in Margalla Hills National Park, and sunset views at Daman-e-Koh.</p>
                 </div>
             </div>
-
             <div class="card-1">
                 <div class="card-content">
                     <h3>Heritage & Landmarks</h3>
-                    <p>
-                        Visit the iconic Faisal Mosque, Pakistan Monument, and the historic Saidpur Village.
-                    </p>
+                    <p>Visit the iconic Faisal Mosque, Pakistan Monument, and the historic Saidpur Village.</p>
                 </div>
             </div>
-
             <div class="card-1">
                 <div class="card-content">
                     <h3>Dining with a View</h3>
-                    <p>
-                        Dinner at The Monal & La Montana (Pir Sohawa), and diverse cuisines at F-7 & F-6 Markaz.
-                    </p>
+                    <p>Dinner at The Monal & La Montana (Pir Sohawa), and diverse cuisines at F-7 & F-6 Markaz.</p>
                 </div>
             </div>
-
-            <div class="card-1">
+             <div class="card-1">
                 <div class="card-content">
                     <h3>Parks & Recreation</h3>
-                    <p>
-                        Boating at Rawal Lake (Lake View Park), F-9 Fatima Jinnah Park, and Shakarparian Hills.
-                    </p>
+                    <p>Boating at Rawal Lake (Lake View Park), F-9 Fatima Jinnah Park, and Shakarparian Hills.</p>
                 </div>
             </div>
         </div>
 
         <div class="flex">
-            <div class="card-1">
+             <div class="card-1">
                 <div class="card-content">
                     <h3>Shopping & Malls</h3>
-                    <p>
-                        The Centaurus Mall, Safa Gold Mall, Giga Mall (DHA), and traditional shopping at Jinnah Super.
-                    </p>
+                    <p>The Centaurus Mall, Safa Gold Mall, Giga Mall (DHA), and traditional shopping at Jinnah Super.</p>
                 </div>
             </div>
-
             <div class="card-1">
                 <div class="card-content">
                     <h3>Lok Mela (Folk Festival)</h3>
-                    <p>
-                        Annual folk festival at Lok Virsa Museum featuring artisans, music, and food from all provinces.
-                    </p>
+                    <p>Annual folk festival at Lok Virsa Museum featuring artisans, music, and food from all provinces.</p>
                 </div>
             </div>
-
             <div class="card-1">
                 <div class="card-content">
                     <h3>Arts & Literature</h3>
-                    <p>
-                        Islamabad Literature Festival (ILF), PNCA art exhibitions, and theater plays.
-                    </p>
+                    <p>Islamabad Literature Festival (ILF), PNCA art exhibitions, and theater plays.</p>
                 </div>
             </div>
-
-            <div class="card-1">
-                <div class="card-content">
-                    <h3>Sports & Adventure</h3>
-                    <p>
-                        Cricket at Shalimar Ground, Paragliding at Khanpur Dam (nearby), and Islamabad Sports Complex.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex">
-            <div class="card-1">
+             <div class="card-1">
                 <div class="card-content">
                     <h3>Weekly Bazaars</h3>
-                    <p>
-                        The famous Sunday Bazaar (H-9) for thrifting, antiques, organic vegetables, and cheap clothing.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card-1">
-                <div class="card-content">
-                    <h3>Gaming & Bowling</h3>
-                    <p>
-                        Bowling at Megazone (F-9 Park), F1 Traxx for go-karting, and gaming arcades in Safa Gold Mall.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card-1">
-                <div class="card-content">
-                    <h3>Cafe Culture & Chai</h3>
-                    <p>
-                        Enjoying evening tea at 'Chaye Khana', Quetta Tea spots, and trendy cafes in F-11 and E-7.
-                    </p>
+                    <p>The famous Sunday Bazaar (H-9) for thrifting, antiques, organic vegetables, and cheap clothing.</p>
                 </div>
             </div>
         </div>
-
     </section>
     
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-flex">
                 <div class="footer-section">
                     <h3>About DNBC</h3>
-                    <p>Digital News Broadcasting Corporation <br>
-                        Your trusted source for accurate, timely, <br>
-                        and comprehensive news coverage since 2020.</p>
+                    <p>Digital News Broadcasting Corporation.<br>Your trusted source for news.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick_Links</h3>
+                    <h3>Quick Links</h3>
                     <ul>
                         <li><a href="./main-page.html" target="_blank">Home</a></li>
                         <li><a href="./about-page.html" target="_blank">About Us</a></li>
                         <li><a href="./world-page.html" target="_blank">World News</a></li>
-                        <li><a href="./sports-page.html"target="_blank">Sports</a></li>
-                        <li><a href="./business-page.html"target="_blank">Business</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Cities_Coverage</h3>
+                    <h3>Cities Coverage</h3>
                     <ul>
-                       <li><a href="#isl">Islamabad</a></li>
+                        <li><a href="#isl">Islamabad</a></li>
                         <li><a href="./city-dubai.html" target="_blank">Dubai</a></li>
                         <li><a href="./city-london.html" target="_blank">London</a></li>
-                        <li><a href="./city-istanbul.html" target="_blank">Istanbul</a></li>
-                        <li><a href="./city-newyork.html" target="_blank">Newyork</a></li>
-                        <li><a href="./city-bangkok.html"target="_blank">BangKok</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -434,16 +411,49 @@
                         <li>📍 I.I. Chundrigar Road, Karachi</li>
                         <li>📞 +92-21-1234567</li>
                         <li>📧 info@dnbcnews.com</li>
-                         <li><a href="./contact-page.html" target="_blank">Contact Form</a></li>
-                        <li><a href="./feedback-page.html" target="_blank">Send Feedback</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 DNBC News. All Rights Reserved.</p>
+                <p>© 2025 DNBC News. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+              $(".hide1").click(function () {
+                $(".show1").slideToggle()
+            })
+            $(".show1").hide()
+             
+            
+            $(".hide2").click(function () {
+                $(".show2").slideToggle()
+            })
+            $(".show2").hide()
+
+               $(".hide3").click(function () {
+                $(".show3").slideToggle()
+            })
+            $(".show3").hide()
+
+
+            $(".hide4").click(function () {
+                $(".show4").slideToggle()
+            })
+            $(".show4").hide()
+
+
+            $(".hide5").click(function () {
+                $(".show5").slideToggle()
+            })
+            $(".show5").hide()
+
+
+            $(".hide6").click(function () {
+                $(".show6").slideToggle()
+            })
+            $(".show6").hide()
+        </script>
 </body>
 </html>

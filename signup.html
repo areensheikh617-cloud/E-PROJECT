@@ -3,115 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sign-DNBC</title>
-   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Sign Up - DNBC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-a {
-    text-decoration: none;
-    color: rgb(228, 82, 130);
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            /* Background Image Fixed */
+            background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh; /* Ensures background covers full height */
+        }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    /* background-color: #f4f4f4; */
-    background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+        }
 
-/* Header Styles */
-.hero-section {
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    border-radius: 0 0 20px 20px;
-}
+        /* =========================================
+           HEADER & NAVBAR
+           ========================================= */
+        .hero-section {
+            width: 100%;
+        }
 
-.navbar {
-    width: 100%;
-    padding: 40px 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 30px;
-    border-bottom: 1px solid red;
-}
+        .navbar {
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 0 0 30px 30px;
+            border-bottom: 1px solid red;
+            position: relative;
+            z-index: 10;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-.nav-links a {
-    text-decoration: none;
-    color: #e0e0e0;
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    padding-bottom: 10px;
-    transition: 0.3s;
-}
+        .nav-links a {
+            color: #e0e0e0;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 5px;
+        }
 
-.nav-links a:hover {
-    color: white;
-}
+        .nav-links a:hover {
+            color: white;
+        }
 
-/* Active Link (Golden Underline) */
-.nav-links a.active {
-    color: white;
-    border-bottom: 3px solid #c5a065;
-}
+        .nav-links a.active {
+            color: white;
+            border-bottom: 3px solid #c5a065;
+        }
 
-/* Main Content */
+        /* =========================================
+           SIGN UP CONTAINER & CARD
+           ========================================= */
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
+            min-height: 85vh; /* Screen ke beech mein lane ke liye */
+            padding: 40px 20px;
         }
 
         .sign-card {
             background-color: #ffffff;
-            padding: 30px 45px;
+            padding: 40px;
             width: 100%;
-            height: 650px;
-            max-width: 480px;
-            border-radius: 20px; /* Soft rounded corners */
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08); /* Soft shadow */
+            max-width: 500px; /* Thoda wider kiya */
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             text-align: left;
             border: 1px solid rgba(255,255,255,0.8);
+            position: relative;
         }
 
         .sign-card h2 {
             text-align: center;
-            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-family: 'Playfair Display', serif;
             color: #1a4a3b;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             font-size: 32px;
             font-weight: 700;
         }
 
-        .form-group-sign{
+        /* Form Inputs */
+        .form-group-sign {
             margin-bottom: 20px;
         }
 
         .form-group-sign label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 500;
+            font-weight: 600;
             color: #4a5550;
             font-size: 13px;
             letter-spacing: 0.5px;
@@ -121,10 +124,10 @@ body {
         .form-group-sign input {
             width: 100%;
             padding: 14px 18px;
-            border: 1px solid #e0e0e0;
+            border: 2px solid #e0e0e0;
             background-color: #f9fbfb;
-            border-radius: 10px; /* Rounded inputs */
-            font-size: 14px;
+            border-radius: 10px;
+            font-size: 15px;
             color: #333;
             outline: none;
             transition: all 0.3s ease;
@@ -136,10 +139,20 @@ body {
             box-shadow: 0 0 0 4px rgba(26, 74, 59, 0.1);
         }
 
+        /* Error Messages */
+        .error-msg {
+            color: #d93025;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+            font-weight: 600;
+        }
+
+        /* Button */
         .btn-sign {
             width: 100%;
             padding: 15px;
-            background-color: #1a4a3b; /* Deep aesthetic green */
+            background-color: #1a4a3b;
             color: white;
             border: none;
             border-radius: 10px;
@@ -150,6 +163,7 @@ body {
             margin-top: 15px;
             font-family: 'Poppins', sans-serif;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .btn-sign:hover {
@@ -158,10 +172,11 @@ body {
             box-shadow: 0 5px 15px rgba(26, 74, 59, 0.2);
         }
 
+        /* Links */
         .sign-link {
             text-align: center;
             margin-top: 25px;
-            padding-top: 15px;
+            padding-top: 20px;
             border-top: 1px solid #eee;
             font-size: 14px;
             color: #666;
@@ -169,9 +184,7 @@ body {
 
         .sign-link a {
             color: #1a4a3b;
-            text-decoration: none;
             font-weight: 700;
-            transition: color 0.2s;
         }
 
         .sign-link a:hover {
@@ -179,19 +192,51 @@ body {
             text-decoration: underline;
         }
 
-        /* Mobile adjustments */
-        @media (max-width: 600px) {
-            header {
-                padding: 15px 20px;
+        /* =========================================
+           RESPONSIVE (MOBILE & TABLET)
+           ========================================= */
+        @media (max-width: 768px) {
+            
+            /* --- 2. HEADER & NAVBAR FIX --- */
+    .navbar {
+        padding: 15px 0 !important;
+        height: auto;
+    }
+
+    .nav-links {
+        flex-direction: row !important; /* Links side-by-side */
+        justify-content: center !important;
+        flex-wrap: wrap !important; /* Agar jagah kam ho to wrap kare */
+        gap: 10px !important;
+        padding: 0 10px;
+    }
+
+    .nav-links a {
+        font-size: 13px !important; /* Font chhota kiya taaki fit aaye */
+        padding: 5px;
+    }
+
+            /* Container & Card */
+            .container {
+                padding: 20px 15px;
+                min-height: auto; /* Remove centering height on mobile */
+                margin-top: 20px;
             }
-            nav {
-                display: none; /* Simple hide for mobile for now */
-            }
+
             .sign-card {
-                padding: 30px 20px;
+                padding: 25px 20px;
+                max-width: 100%;
+            }
+
+            .sign-card h2 {
+                font-size: 26px;
+                margin-bottom: 25px;
+            }
+
+            .form-group-sign input {
+                padding: 12px 15px;
             }
         }
-
     </style>
 </head>
 <body>
@@ -199,7 +244,7 @@ body {
     <header class="hero-section">
         <nav class="navbar">
             <ul class="nav-links">
-               <li><a href="./index.html" target="_blank"> HOME</a></li>
+                <li><a href="./index.html" target="_blank"> HOME</a></li>
                 <li><a href="./about-page.html" target="_blank">ABOUT US</a></li>
                 <li><a href="./world-page.html" target="_blank"> TODAY IN WORLD</a></li>
                 <li><a href="./sports-page.html" target="_blank">SPORTS</a></li>
@@ -216,28 +261,32 @@ body {
     <div class="container">
         <div class="sign-card">
             <h2>CREATE ACCOUNT</h2>
-            <form>
+            <form id="signupForm">
                 <div class="form-group-sign">
                     <label for="fullname">Full Name</label>
                     <input type="text" id="fullname" placeholder="Enter your full name">
+                    <div id="nameError" class="error-msg">Name is required</div>
                 </div>
 
                 <div class="form-group-sign">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" placeholder="Enter your email">
+                    <div id="emailError" class="error-msg">Valid email is required</div>
                 </div>
 
                 <div class="form-group-sign">
                     <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Create a password">
+                    <input type="password" id="password" placeholder="Create a password (min 6 chars)">
+                    <div id="passError" class="error-msg">Password must be at least 6 characters</div>
                 </div>
 
                 <div class="form-group-sign">
                     <label for="confirm-password">Confirm Password</label>
                     <input type="password" id="confirm-password" placeholder="Confirm your password">
+                    <div id="matchError" class="error-msg">Passwords do not match!</div>
                 </div>
 
-                <button type="submit" class="btn-sign">Sign Up</button>
+                <button type="submit" class="btn-sign" id="signupBtn">Sign Up</button>
 
                 <div class="sign-link">
                     Already have an account? <a href="./login.html">Log in</a>
@@ -245,5 +294,76 @@ body {
             </form>
         </div>
     </div>
+
+    <script>
+        const form = document.getElementById('signupForm');
+        const fullName = document.getElementById('fullname');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm-password');
+        const signupBtn = document.getElementById('signupBtn');
+
+        // Error Elements
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const passError = document.getElementById('passError');
+        const matchError = document.getElementById('matchError');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page reload
+
+            // Reset Errors
+            nameError.style.display = 'none';
+            emailError.style.display = 'none';
+            passError.style.display = 'none';
+            matchError.style.display = 'none';
+            
+            let isValid = true;
+
+            // 1. Validate Name
+            if (fullName.value.trim() === '') {
+                nameError.style.display = 'block';
+                isValid = false;
+            }
+
+            // 2. Validate Email
+            if (!email.value.includes('@') || email.value.trim() === '') {
+                emailError.style.display = 'block';
+                isValid = false;
+            }
+
+            // 3. Validate Password Length
+            if (password.value.length < 6) {
+                passError.style.display = 'block';
+                isValid = false;
+            }
+
+            // 4. Validate Password Match
+            if (password.value !== confirmPassword.value && password.value !== '') {
+                matchError.style.display = 'block';
+                isValid = false;
+            }
+
+            // Submit Data Simulation
+            if (isValid) {
+                signupBtn.textContent = "Creating Account...";
+                signupBtn.disabled = true;
+                signupBtn.style.opacity = "0.7";
+
+                setTimeout(() => {
+                    alert("Account Created Successfully! Redirecting to Login...");
+                    form.reset();
+                    signupBtn.textContent = "Sign Up";
+                    signupBtn.disabled = false;
+                    signupBtn.style.opacity = "1";
+                    
+                    // Redirect to login page
+                    window.location.href = "./login.html";
+                }, 2000);
+            }
+        });
+    </script>
 </body>
 </html>
+
+```

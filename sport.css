@@ -1,3 +1,6 @@
+/* =========================================
+   1. GLOBAL SETTINGS
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -9,24 +12,26 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-      background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
+    background-image: url(CONTENT/Screenshot\ 2026-01-04\ 155648.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow-x: hidden; 
 }
 
-/* Header Styles */
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
 .hero-section {
-    /* Background Image setup */
-    background:linear-gradient( to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
+    background: linear-gradient( to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
     url('./CONTENT/sports-dnbc.png');
     background-size: cover;
     background-position: center;
     height: 750px;
     position: relative;
     border-radius: 0 0 20px 20px;
-
+    width: 100%;
 }
 
 .navbar {
@@ -41,9 +46,9 @@ body {
     list-style: none;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     gap: 30px;
-
+    padding: 0 10px; /* Thoda padding taaki mobile pe edge se na chipke */
 }
 
 .nav-links a {
@@ -61,318 +66,256 @@ body {
 .nav-links a:hover {
     color: white;
 }
-.bt {
-     padding: 10px 30px ;
-     font-size: 16px;
-     border-radius: 5px;
-     cursor: pointer;
-     transition: 0.3s;
-     font-weight: bold;
- }
 
-
- .btn-login {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-login:hover {
-     background-color: grey;
- }
-
-
- .btn-signup {
-     background-color: maroon;
-     border-radius: 20px;
-     border: 2px solid rgba(0, 0, 0, 0.8);
- }
-
- .btn-signup:hover {
-     background-color:gray;
- }
-
-/* Active Link (Golden Underline) */
 .nav-links a.active {
     color: white;
     border-bottom: 3px solid #c5a065;
 }
 
-  .hero {
-     padding: 0 5%;
-     margin-top: 150px;
-     margin-left: 80px;
- }
+/* ID based button style (from your code) */
+#btn {
+    color: white;
+    background-color: #203a43;
+    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 8px 15px;
+    border: 1px solid #e0e0e0;
+    margin-left: 10px;
+    cursor: pointer;
+}
 
- /* The Pro Gradient Overlay */
+#btn:hover {
+    transition: 0.3s;
+    color: black;
+    background-color: white;
+}
 
- .hero-content {
-     max-width: 650px;
-     color: white;
- }
+/* Hero Content */
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    margin: 100px auto 0 auto;
+    padding: 0 5%;
+    color: white;
+    text-align: left;
+}
 
- .hero h1 {
-     font-family: 'Oswald', sans-serif;
-     font-size: 5.3rem;
-     line-height: 1.1;
-     margin-bottom: 20px;
-     text-transform: uppercase;
-     color: rgb(213, 213, 213);
- }
+.hero-content {
+    max-width: 650px;
+}
 
- .hero p {
-     font-size: 1.2rem;
-     margin-bottom: 30px;
-     border-left: 4px solid #cc0000;
-     /* Stylish accent line */
-     padding-left: 15px;
-     background: rgba(0, 0, 0, 0.3);
-     /* Subtle background */
- }
+.hero h1 {
+    font-family: 'Oswald', sans-serif;
+    /* Clamp use kiya taake heading screen ke hisaab se choti ho */
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: rgb(213, 213, 213);
+}
 
- .btn {
-     padding: 15px 40px;
-     background-color: white;
-     color: black;
-     text-decoration: none;
-     font-weight: bold;
-     text-transform: uppercase;
-     transition: 0.3s;
- }
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    border-left: 4px solid #cc0000;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.4);
+    max-width: 600px;
+    border-radius: 0 5px 5px 0;
+}
 
- .btn:hover {
-     background-color: #cc0000;
-     color: white;
- }
+.btn {
+    padding: 15px 40px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    display: inline-block;
+    border-radius: 5px;
+}
 
-/* page header */
- .container {
-     max-width: 1200px;
-     margin-left: 150px;
-     margin-top: 40px;
-     padding: 0 20px;
- }
+.btn:hover {
+    background-color: #cc0000;
+    color: white;
+}
 
- .container1{
-     max-width: 1200px;
-     margin-left: 30px;
-     margin-top: 40px;
-     padding: 0 20px;
- }
+/* ================= MAIN CONTAINERS ================= */
+.container, .container1 {
+    width: 92%; /* 100% ki jagah 92% taake edges se gap rahe */
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0;
+}
 
- .page-header {
-     background: linear-gradient(90deg, #2e647c, #315865, #0f2027);
-     color: white;
-     padding: 4rem 2rem;
-     text-align: center;
-     border-radius: 10px;
-     margin-bottom: 3rem;
- }
+.page-header {
+    background: linear-gradient(90deg, #2e647c, #315865, #0f2027);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
 
- .page-header h1 {
-     font-size: 3rem;
-     margin-bottom: 1rem;
-     font-family: Georgia, 'Times New Roman', Times, serif;
-     font-weight: 800;
-     text-transform: uppercase;
- }
+.page-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem); /* Responsive heading */
+    margin-bottom: 1rem;
+    font-family: Georgia, serif;
+    font-weight: 800;
+    text-transform: uppercase;
+}
 
- .page-header p {
-     font-size: 1.2rem;
-     font-family: Georgia, 'Times New Roman', Times, serif;
- }
+/* ================= MATCH SECTION ================= */
+.featured-match {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    width: 100%;
+}
 
- .featured-match {
-     background: white;
-     border-radius: 10px;
-     overflow: hidden;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-     margin-bottom: 3rem;
-     padding: 2rem;
-     width: 1200px;
-     margin-left: 200px;
-     margin-top: 50px;
- }
-
- .match-header {
-     text-align: center;
-     padding: 1.5rem;
+.match-header {
+    text-align: center;
+    padding: 1.5rem;
     background: #01411C;
-     color: white;
-     border-radius: 8px;
-     margin-bottom: 2rem;
- }
+    color: white;
+}
 
- .match-header h2 {
-     font-size: 2rem;
-     margin-bottom: 0.5rem;
- }
+.match-teams {
+    display: grid;
+    /* Desktop layout: Team VS Team */
+    grid-template-columns: 1fr auto 1fr; 
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+}
 
- .match-teams {
-     display: grid;
-     grid-template-columns: 1fr auto 1fr;
-     gap: 2rem;
-     align-items: center;
-     padding: 2rem;
- }
+.team { text-align: center; }
+.team-flag { font-size: 5rem; display: block; margin-bottom: 10px; }
+.team-name { font-size: 1.5rem; color: #1e3c72; font-weight: bold; }
+.vs { font-size: 2.5rem; color: #667eea; font-weight: bold; }
 
- .team {
-     text-align: center;
- }
+.match-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
 
- .team-flag {
-     font-size: 5rem;
-     margin-bottom: 1rem;
- }
+.section-title {
+    font-size: 2rem;
+    color: #1e3c72;
+    margin: 2rem 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #11998e;
+}
 
- .team-name {
-     font-size: 1.5rem;
-     color: #1e3c72;
-     font-weight: bold;
- }
+/* ================= NEWS GRID (FIXED) ================= */
+.news-grid {
+    display: grid; /* Flex hata kar Grid kiya */
+    /* Desktop par 3 columns barabar */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
 
- .vs {
-     font-size: 2.5rem;
-     color: #667eea;
-     font-weight: bold;
- }
+.news-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Image bahar na nikle */
+}
 
- .match-info {
-     background: #f8f9fa;
-     padding: 1.5rem;
-     border-radius: 8px;
-     text-align: center;
- }
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
 
- .match-info p {
-     margin: 0.5rem 0;
-     color: #666;
- }
+.news-image {
+    width: 100%;
+    height: 200px;
+    background: #333;
+}
 
- .section-title {
-     font-size: 2rem;
-     color: #1e3c72;
-     margin: 2rem 0 1.5rem 0;
-     padding-bottom: 0.5rem;
-     border-bottom: 3px solid #11998e;
- }
-
- .news-grid {
-     display: grid;
-     grid-template-columns: 1fr 1fr 1fr;
-     grid-template-rows: auto;
-     /* justify-content: flex-start;
-     align-items: flex-start; */
-     gap: 2rem;
-     margin-bottom: 3rem;
-    
- }
-
- .news-card {
-     background: white;
-     border-radius: 8px;
-     height: 700px;
-     width: 400px;
-     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-     transition: transform 0.3s;
- }
-
- .news-card:hover {
-     transform: translateY(-5px);
-     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
- }
-
- .news-image {
-     width: 400px;
-     height: 200px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     color: white;
-     font-size: 4rem;
- }
- .news-image img{
+.news-image img {
     width: 100%;
     height: 100%;
- }
- .news-content {
-     padding: 1.5rem;
- }
+    object-fit: cover;
+}
 
- .news-category {
-     background: #11998e;
-     color: white;
-     padding: 0.3rem 0.8rem;
-     border-radius: 15px;
-     font-size: 0.75rem;
-     display: inline-block;
-     margin-bottom: 0.8rem;
- }
+.news-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
 
- .news-card h3 {
-     color: #1e3c72;
-     font-size: 1.2rem;
-     margin-bottom: 0.8rem;
- }
+.news-category {
+    background: #11998e;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
 
- .news-card p {
-     color: #666;
-     margin-bottom: 1rem;
-     line-height: 1.6;
- }
+.news-card h3 {
+    color: #1e3c72;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
 
- .news-meta {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     color: #999;
-     font-size: 0.85rem;
-     padding-top: 1rem;
-     border-top: 1px solid #eee;
- }
+.news-card p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
 
- .read-more {
-     color: #11998e;
-     text-decoration: none;
-     font-weight: 600;
- }
+.news-meta {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #999;
+}
 
- .standings-table {
-     background: white;
-     padding: 2rem;
-     border-radius: 10px;
-     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-     margin-bottom: 2rem;
-     width: 1300px;
- }
+.read-more { color: #11998e; text-decoration: none; font-weight: 600; }
 
- table {
-     width: 100%;
-     border-collapse: collapse;
- }
+/* ================= TABLE ================= */
+.standings-table {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    overflow-x: auto; /* Table horizontal scroll */
+}
 
- th {
-     background: #11998e;
-     color: white;
-     padding: 1rem;
-     text-align: left;
- }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Forces scroll on small devices */
+}
 
- td {
-     padding: 1rem;
-     border-bottom: 1px solid #eee;
- }
+th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eee; }
+th { background: #11998e; color: white; white-space: nowrap; }
+tr:hover { background: #f8f9fa; }
 
- tr:hover {
-     background: #f8f9fa;
- }
-
-/* Footer */
+/* ================= FOOTER ================= */
 footer {
     background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
     color: white;
     padding: 3rem 0 1rem 0;
-    border-radius: 30px;
+    border-radius: 30px 30px 0 0;
     margin-top: 3rem;
 }
 
@@ -384,213 +327,108 @@ footer {
 
 .footer-flex {
     display: flex;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 2rem;
     margin-bottom: 2rem;
 }
 
 .footer-section {
-    margin-right: 80px;
+    flex: 1;
+    min-width: 250px;
 }
 
-.footer-section h3 {
-    margin-bottom: 1rem;
-    color: #ffd700;
-}
+.footer-section h3 { margin-bottom: 1rem; color: #ffd700; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 0.5rem; }
+.footer-section a { color: white; text-decoration: none; opacity: 0.8; transition: 0.3s; }
+.footer-section a:hover { opacity: 1; color: #ffd700; }
+.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
 
-.footer-section ul {
-    list-style: none;
-}
+/* ================= RESPONSIVE MEDIA QUERIES ================= */
 
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.9;
-    transition: opacity 0.3s;
-}
-
-.footer-section a:hover {
-    opacity: 1;
-    color: #ffd700;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    opacity: 0.8;
-}
-
-/* =========================================
-   RESPONSIVE MEDIA QUERIES
-   ========================================= */
-
-/* =======================================================
-   RESPONSIVE MEDIA QUERIES (Mobile & Tablet Fixes)
-   ======================================================= */
-
-/* --- Tablet View (Max Width: 1024px) --- */
+/* Tablet View */
 @media screen and (max-width: 1024px) {
-    .container, .container1, .featured-match, .standings-table {
-        width: 95%; /* Fixed width hata kar % mein kiya */
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .news-grid {
-        grid-template-columns: 1fr 1fr; /* 3 ki jagah 2 columns */
-        gap: 20px;
-    }
-    
-    .news-card {
-        width: 100%;
+        grid-template-columns: repeat(2, 1fr); /* Tablet par 2 columns */
     }
 }
 
-/* --- Mobile View (Max Width: 768px) --- */
+/* Mobile View (Strict adjustments) */
 @media screen and (max-width: 768px) {
+    
+    body { background-attachment: scroll; }
 
-
-    .container {
-        width: 100%;
-        padding: 0 15px;
-    }
-
-    /* --- 2. HEADER & NAVBAR FIX --- */
+    /* --- 1. NAVBAR FIX (Keeping Row layout but making it fit) --- */
     .navbar {
-        padding: 15px 0 !important;
+        padding: 15px 0;
         height: auto;
     }
 
     .nav-links {
-        flex-direction: row !important; /* Links side-by-side */
+        display: flex;
+        flex-direction: row !important; /* Force row as requested */
+        flex-wrap: wrap !important; /* Wrap karega agar jagah kam hui */
         justify-content: center !important;
-        flex-wrap: wrap !important; /* Agar jagah kam ho to wrap kare */
-        gap: 10px !important;
+        gap: 15px !important;
         padding: 0 10px;
     }
 
     .nav-links a {
-        font-size: 13px !important; /* Font chhota kiya taaki fit aaye */
+        font-size: 14px !important; /* Font size adjust kiya */
         padding: 5px;
     }
 
-    .bt {
-        padding: 8px 15px !important; /* Login buttons chote kiye */
-        font-size: 12px !important;
+    #btn {
+        margin-left: 5px;
+        padding: 6px 12px;
+        font-size: 13px;
     }
 
-    /* --- 3. HERO SECTION FIX --- */
+    /* --- 2. HERO FIX --- */
     .hero-section {
-        height: auto !important;
-        min-height: 600px; /* Mobile par height adjust ki */
-        background-position: center center !important;
+        min-height: auto;
+        padding-bottom: 60px;
     }
 
     .hero {
-        margin-left: 0 !important;
-        margin-top: 60px !important;
-        padding: 0 20px;
+        margin-top: 60px;
         text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: 0 20px;
     }
 
     .hero h1 {
-        font-size: 2.5rem !important; /* Heading adjust ki */
-        line-height: 1.2;
+        font-size: 2.2rem; /* Heading size control */
     }
 
-    /* "Stay informed..." text fix */
     .hero p {
-        font-size: 14px !important;
-        width: 90% !important;
-        max-width: 400px !important;
-        margin: 10px auto 20px auto !important;
-        border-left: none !important; /* Side border hataya */
-        background: rgba(0, 0, 0, 0.5) !important;
-        padding: 15px !important;
-        border-radius: 10px;
-    }
-    
-    /* 3. MAIN CONTAINERS RESET */
-    .container, .container1 {
-        margin: 30px auto; /* Left margin hataya */
-        width: 100%;
-        padding: 0 15px;
+        margin: 10px auto 30px auto;
+        border-left: none;
+        border-top: 4px solid #cc0000;
+        text-align: left;
     }
 
-    .section-title {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    /* 4. FEATURED MATCH */
-    .featured-match {
-        width: 95%;
-        margin: 20px auto;
-        padding: 1.5rem;
-    }
-
+    /* --- 3. LAYOUT FIXES --- */
+    /* Featured Match Stack */
     .match-teams {
-        grid-template-columns: 1fr; /* Teams ek ke niche ek */
+        grid-template-columns: 1fr; /* Teams ek ke neeche ek */
         gap: 1.5rem;
     }
 
-    .vs {
-        margin: 10px 0;
-    }
+    .vs { margin: 10px 0; }
 
-    /* 5. NEWS GRID (Cards) */
+    /* News Grid Single Column */
     .news-grid {
-        display: flex;
-        flex-direction: column; /* Ek ke niche ek */
-        gap: 30px;
-        width: 100%;
+        grid-template-columns: 1fr; /* Mobile par 1 column */
     }
 
-    .news-card {
-        width: 100%; /* Full width */
-        height: auto; /* Height fix hata di taaki content na kate */
-        margin: 0 auto;
-    }
-
-    .news-image {
-        width: 100%;
-        height: 200px;
-    }
-
-    .news-content {
-        padding: 1rem;
-    }
-
-    /* 6. TABLE SCROLL (Points Table) */
-    .standings-table {
-        width: 100%; /* Screen se bahar na jaye */
-        margin: 0 auto;
-        padding: 10px;
-        overflow-x: auto; /* Scroll bar aajaye agar table badi ho */
-        display: block;
-    }
-
-    table {
-        min-width: 600px; /* Table ko squish hone se bachata hai */
-    }
-
-    /* 7. FOOTER */
+    /* Footer Fix */
     .footer-flex {
-        flex-direction: column;
-        gap: 30px;
+        flex-direction: column; /* Stack vertically on mobile */
         text-align: center;
     }
 
     .footer-section {
-        margin-right: 0;
-        width: 100%;
+        min-width: 100%;
     }
 }

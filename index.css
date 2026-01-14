@@ -827,6 +827,7 @@
         margin-bottom: 20px !important;
         height: auto !important; /* Fixed height hata di */
     }
+    
 
     /* Card 1 aur 2 ko wapis normal banaya */
     .card-1 {
@@ -841,6 +842,7 @@
         gap: 15px !important;
         width: 100% !important;
     }
+    
      
     /* --- 7. FOOTER FIX --- */
     .footer-flex {
@@ -867,4 +869,8 @@
     .hero h1 {
         font-size: 2rem !important;
     }
+     .news-flex {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; 
+     }
 }
